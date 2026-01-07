@@ -51,16 +51,24 @@ export default function AddListingProtected() {
             <p className="text-blue-100 text-sm">
               Zone réservée aux administrateurs
             </p>
+            <div className="mt-4">
+              <div className="flex flex-wrap justify-center gap-2 text-blue-100 text-xs">
+                <span className="px-2 py-1 bg-blue-700 rounded">Abidjan</span>
+                <span className="px-2 py-1 bg-blue-600 rounded">Yamoussoukro</span>
+                <span className="px-2 py-1 bg-blue-800 rounded">Bouaké</span>
+                <span className="px-2 py-1 bg-blue-900 rounded">San Pédro</span>
+              </div>
+            </div>
           </div>
 
           {/* Formulaire */}
           <div className="px-8 py-8">
             <div className="mb-6">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                Ajouter une annonce
+                Déposer une annonce
               </h2>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
-                Entrez votre mot de passe pour accéder à l'interface d'ajout d'annonces
+                Entrez votre mot de passe pour accéder à l'interface de dépôt d'annonces
               </p>
             </div>
 
@@ -127,7 +135,7 @@ export default function AddListingProtected() {
                     Vérification en cours...
                   </span>
                 ) : (
-                  "Accéder à l'ajout d'annonce"
+                  "Accéder au dépôt d'annonces"
                 )}
               </button>
             </form>
@@ -141,6 +149,12 @@ export default function AddListingProtected() {
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Cette zone est protégée pour des raisons de sécurité
           </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-2 text-gray-500 text-xs">
+            <span className="px-2 py-1 bg-gray-700 rounded">Abidjan</span>
+            <span className="px-2 py-1 bg-gray-600 rounded">Yamoussoukro</span>
+            <span className="px-2 py-1 bg-gray-500 rounded">Bouaké</span>
+            <span className="px-2 py-1 bg-gray-400 rounded">San Pédro</span>
+          </div>
         </div>
       </div>
     </div>
