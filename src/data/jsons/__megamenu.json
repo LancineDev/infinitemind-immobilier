@@ -1,0 +1,62 @@
+[
+  {
+    "Company": "Immobilier CI",
+    "City": "Abidjan",
+    "Contruction": "Béton",
+    "Country": "Côte d'Ivoire",
+    "AppName": "Propriétés CI",
+    "Department": "Immobilier",
+    "CarModel": "Villa",
+    "Corporate": "Vente"
+  },
+  {
+    "Company": "Agence Immobilière",
+    "City": "Yamoussoukro",
+    "Contruction": "Béton",
+    "Country": "Côte d'Ivoire",
+    "AppName": "Maisons CI",
+    "Department": "Immobilier",
+    "CarModel": "Maison",
+    "Corporate": "Location"
+  },
+  {
+    "Company": "Immobilier Pro",
+    "City": "Bouaké",
+    "Contruction": "Ciment",
+    "Country": "Côte d'Ivoire",
+    "AppName": "Terrains CI",
+    "Department": "Immobilier",
+    "CarModel": "Terrain",
+    "Corporate": "Vente"
+  },
+  {
+    "Company": "Agence Premium",
+    "City": "San-Pédro",
+    "Contruction": "Béton",
+    "Country": "Côte d'Ivoire",
+    "AppName": "Appartements CI",
+    "Department": "Immobilier",
+    "CarModel": "Appartement",
+    "Corporate": "Location"
+  },
+  {
+    "Company": "Immobilier Express",
+    "City": "Korhogo",
+    "Contruction": "Ciment",
+    "Country": "Côte d'Ivoire",
+    "AppName": "Locaux CI",
+    "Department": "Immobilier",
+    "CarModel": "Local commercial",
+    "Corporate": "Vente"
+  },
+  {
+    "Company": "Agence Immobilière Plus",
+    "City": "Daloa",
+    "Contruction": "Béton",
+    "Country": "Côte d'Ivoire",
+    "AppName": "Propriétés Premium",
+    "Department": "Immobilier",
+    "CarModel": "Villa",
+    "Corporate": "Vente"
+  }
+]
