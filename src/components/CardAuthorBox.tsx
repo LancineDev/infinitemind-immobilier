@@ -16,7 +16,20 @@ const CardAuthorBox: FC<CardAuthorBoxProps> = ({
   author,
   index,
 }) => {
-  const { displayName, href = "/", avatar, starRating } = author;
+  const { displayName, href = "/", avatar, starRating, desc } = author;
+  
+  // Extraire la ville depuis la description
+  const getCityFromDescription = (description: string) => {
+    const cities = ["Abidjan", "Yamoussoukro", "Bouaké", "San-Pédro", "Korhogo", "Daloa", "Man"];
+    for (const city of cities) {
+      if (description.toLowerCase().includes(city.toLowerCase())) {
+        return city;
+      }
+    }
+    return "Abidjan"; // Valeur par défaut
+  };
+  
+  const city = desc ? getCityFromDescription(desc) : "Abidjan";
   return (
     <Link
       href={href}
@@ -42,7 +55,7 @@ const CardAuthorBox: FC<CardAuthorBoxProps> = ({
         <span
           className={`block mt-1.5 text-sm text-neutral-500 dark:text-neutral-400`}
         >
-          New York
+          {city}
         </span>
       </div>
       <div className="py-2 px-5 mt-4 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center ">

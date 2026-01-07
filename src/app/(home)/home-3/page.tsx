@@ -1,5 +1,4 @@
 import React from "react";
-import SectionSubscribe2 from "@/components/SectionSubscribe2";
 import BackgroundSection from "@/components/BackgroundSection";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
 import { TaxonomyType } from "@/data/types";
@@ -9,51 +8,51 @@ import SectionHero3 from "@/app/(server-components)/SectionHero3";
 import CardCategory6 from "@/components/CardCategory6";
 import SectionGridFeaturePlaces from "@/components/SectionGridFeaturePlaces";
 
-const DEMO_CATS_2: TaxonomyType[] = [
+const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listing-stay",
-    name: "Enjoy the great cold",
+    href: "/listing-real-estate",
+    name: "Maisons de luxe",
     taxonomy: "category",
-    count: 188288,
+    count: 1245,
     thumbnail:
-      "https://images.pexels.com/photos/5764100/pexels-photo-5764100.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
   },
   {
-    id: "222",
-    href: "/listing-stay",
-    name: "Sleep in a floating way",
+    id: "2",
+    href: "/listing-real-estate",
+    name: "Appartements modernes",
     taxonomy: "category",
-    count: 188288,
+    count: 856,
     thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "3",
-    href: "/listing-stay",
-    name: "In the billionaire's house",
+    href: "/listing-real-estate",
+    name: "Villas prestige",
     taxonomy: "category",
-    count: 188288,
+    count: 623,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "4",
-    href: "/listing-stay",
-    name: "Cool in the deep forest",
+    href: "/listing-real-estate",
+    name: "Terrains à bâtir",
     taxonomy: "category",
-    count: 188288,
+    count: 412,
     thumbnail:
-      "https://images.pexels.com/photos/247532/pexels-photo-247532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "5",
-    href: "/listing-stay",
-    name: "In the billionaire's house",
+    href: "/listing-real-estate",
+    name: "Propriétés commerciales",
     taxonomy: "category",
-    count: 188288,
+    count: 389,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
 ];
 
@@ -72,14 +71,14 @@ function PageHome3() {
         {/* SECTION 1 */}
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex">
-            <CardCategory6 taxonomy={DEMO_CATS_2[0]} />
+            <CardCategory6 taxonomy={CATEGORIES_IMMOBILIERES[0]} />
           </div>
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 grid grid-rows-2 gap-6">
-            <CardCategory6 taxonomy={DEMO_CATS_2[3]} />
-            <CardCategory6 taxonomy={DEMO_CATS_2[1]} />
+            <CardCategory6 taxonomy={CATEGORIES_IMMOBILIERES[3]} />
+            <CardCategory6 taxonomy={CATEGORIES_IMMOBILIERES[1]} />
           </div>
           <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex">
-            <CardCategory6 taxonomy={DEMO_CATS_2[4]} />
+            <CardCategory6 taxonomy={CATEGORIES_IMMOBILIERES[4]} />
           </div>
         </div>
 
@@ -94,8 +93,6 @@ function PageHome3() {
 
         <SectionGridFeaturePlaces />
 
-        {/* SECTION */}
-        <SectionSubscribe2 />
       </div>
     </main>
   );

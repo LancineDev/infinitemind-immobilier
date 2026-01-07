@@ -9,13 +9,13 @@ import React, { Fragment, useState } from "react";
 import ButtonSecondary from "@/shared/ButtonSecondary";
 
 const AccountSavelists = () => {
-  let [categories] = useState(["Properties"]);
+  let [categories] = useState(["Propriétés"]);
 
   const renderSection1 = () => {
     return (
       <div className="space-y-6 sm:space-y-8">
         <div>
-          <h2 className="text-3xl font-semibold">Save lists</h2>
+          <h2 className="text-3xl font-semibold">Listes de sauvegarde</h2>
         </div>
         <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
 

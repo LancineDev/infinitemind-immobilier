@@ -5,7 +5,7 @@ import { Popover, Transition } from "@headlessui/react";
 import Slider from "rc-slider";
 import convertNumbThousand from "@/utils/convertNumbThousand";
 import ButtonSubmit from "../ButtonSubmit";
-import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import { BanknotesIcon } from "@heroicons/react/24/outline";
 
 export interface PriceRangeInputProps {
   onChange?: (data: any) => void;
@@ -16,7 +16,7 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
   onChange,
   fieldClassName = "[ nc-hero-field-padding ]",
 }) => {
-  const [rangePrices, setRangePrices] = useState([100000, 4000000]);
+  const [rangePrices, setRangePrices] = useState([60000000, 2400000000]);
 
   return (
     <Popover className="flex relative flex-[1.3]">
@@ -32,16 +32,14 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
               onClickCapture={() => document.querySelector("html")?.click()}
             >
               <div className="text-neutral-300 dark:text-neutral-400">
-                <CurrencyDollarIcon className="w-5 h-5 lg:w-7 lg:h-7" />
+                <BanknotesIcon className="w-5 h-5 lg:w-7 lg:h-7" />
               </div>
               <div className="flex-grow">
                 <span className="block xl:text-lg font-semibold truncate">
-                  {`$${convertNumbThousand(
-                    rangePrices[0] / 1000
-                  )}k ~ $${convertNumbThousand(rangePrices[1] / 1000)}k`}
+                  {`${convertNumbThousand(rangePrices[0])} FCFA ~ ${convertNumbThousand(rangePrices[1])} FCFA`}
                 </span>
                 <span className="block mt-1 text-sm text-neutral-400 leading-none font-light ">
-                  Choose price range
+                  Choisir la fourchette de prix
                 </span>
               </div>
             </Popover.Button>
@@ -68,12 +66,12 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
             <Popover.Panel className="absolute left-0 lg:right-0 z-10 w-full sm:min-w-[340px] max-w-sm bg-white dark:bg-neutral-800 top-full mt-3 py-5 sm:py-6 px-4 sm:px-8 rounded-3xl shadow-xl">
               <div className="relative flex flex-col space-y-8">
                 <div className="space-y-5">
-                  <span className="font-medium">Range Price </span>
+                  <span className="font-medium">Fourchette de prix</span>
                   <Slider
                     range
                     className="text-red-400"
-                    min={10000}
-                    max={10000000}
+                    min={6000000}
+                    max={600000000}
                     defaultValue={[rangePrices[0], rangePrices[1]]}
                     allowCross={false}
                     step={1000}
@@ -87,11 +85,11 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
                       htmlFor="minPrice"
                       className="block text-sm font-medium text-neutral-700 dark:text-neutral-300"
                     >
-                      Min price
+                      Prix minimum
                     </label>
                     <div className="mt-1 relative rounded-md">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-neutral-500 sm:text-sm">$</span>
+                        <span className="text-neutral-500 sm:text-sm">FCFA</span>
                       </div>
                       <input
                         type="text"
@@ -108,11 +106,11 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
                       htmlFor="maxPrice"
                       className="block text-sm font-medium text-neutral-700 dark:text-neutral-300"
                     >
-                      Max price
+                      Prix maximum
                     </label>
                     <div className="mt-1 relative rounded-md">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <span className="text-neutral-500 sm:text-sm">$</span>
+                        <span className="text-neutral-500 sm:text-sm">FCFA</span>
                       </div>
                       <input
                         disabled

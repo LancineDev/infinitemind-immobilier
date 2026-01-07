@@ -516,7 +516,6 @@ const ListingStayDetailPage: FC<ListingStayDetailPageProps> = ({}) => {
           {renderSection1()}
           {renderSection2()}
           {renderSection3()}
-          {renderSection5()}
           {renderSection6()}
           {renderSection7()}
           {renderSection8()}

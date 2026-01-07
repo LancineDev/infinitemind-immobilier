@@ -1,5 +1,6 @@
-import React, { FC } from "react";
-import SectionSubscribe2 from "@/components/SectionSubscribe2";
+"use client";
+
+import React, { FC, useState } from "react";
 import SocialsList from "@/shared/SocialsList";
 import Label from "@/components/Label";
 import Input from "@/shared/Input";
@@ -10,7 +11,7 @@ export interface PageContactProps {}
 
 const info = [
   {
-    title: "🗺 ADDRESS",
+    title: "🗺 ADRESSE",
     desc: "Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter",
   },
   {
@@ -18,12 +19,25 @@ const info = [
     desc: "nc.example@example.com",
   },
   {
-    title: "☎ PHONE",
+    title: "☎ TÉLÉPHONE",
     desc: "000-123-456-7890",
   },
 ];
 
-const PageContact: FC<PageContactProps> = ({}) => {
+const PageContact: FC<PageContactProps> = () => {
+  const [fullName, setFullName] = useState("");
+  const [emailAddr, setEmailAddr] = useState("");
+  const [msg, setMsg] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Numéro WhatsApp en Côte d'Ivoire
+    const waPhone = "2250712129409";
+    const text = `Contact via le site\nNom: ${fullName}\nEmail: ${emailAddr}\nMessage: ${msg}`;
+    const waLink = `https://wa.me/${waPhone}?text=${encodeURIComponent(text)}`;
+    window.open(waLink, "_blank");
+  };
+
   return (
     <div className={`nc-PageContact overflow-hidden`}>
       <div className="mb-24 lg:mb-32">
@@ -32,6 +46,7 @@ const PageContact: FC<PageContactProps> = ({}) => {
         </h2>
         <div className="container max-w-7xl mx-auto">
           <div className="flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 gap-12 ">
+            {/* Infos de contact */}
             <div className="max-w-sm space-y-8">
               {info.map((item, index) => (
                 <div key={index}>
@@ -45,38 +60,46 @@ const PageContact: FC<PageContactProps> = ({}) => {
               ))}
               <div>
                 <h3 className="uppercase font-semibold text-sm dark:text-neutral-200 tracking-wider">
-                  🌏 SOCIALS
+                  🌏 RÉSEAUX SOCIAUX
                 </h3>
                 <SocialsList className="mt-2" />
               </div>
             </div>
-            <div>
-              <form className="grid grid-cols-1 gap-6" action="#" method="post">
-                <label className="block">
-                  <Label>Full name</Label>
 
+            {/* Formulaire */}
+            <div>
+              <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
+                <label className="block">
+                  <Label>Nom complet</Label>
                   <Input
-                    placeholder="Example Doe"
+                    placeholder="Exemple Doe"
                     type="text"
                     className="mt-1"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
                   />
                 </label>
                 <label className="block">
-                  <Label>Email address</Label>
-
+                  <Label>Adresse email</Label>
                   <Input
                     type="email"
-                    placeholder="example@example.com"
+                    placeholder="exemple@exemple.com"
                     className="mt-1"
+                    value={emailAddr}
+                    onChange={(e) => setEmailAddr(e.target.value)}
                   />
                 </label>
                 <label className="block">
                   <Label>Message</Label>
-
-                  <Textarea className="mt-1" rows={6} />
+                  <Textarea
+                    className="mt-1"
+                    rows={6}
+                    value={msg}
+                    onChange={(e) => setMsg(e.target.value)}
+                  />
                 </label>
                 <div>
-                  <ButtonPrimary type="submit">Send Message</ButtonPrimary>
+                  <ButtonPrimary type="submit">Envoyer le message</ButtonPrimary>
                 </div>
               </form>
             </div>
@@ -84,10 +107,7 @@ const PageContact: FC<PageContactProps> = ({}) => {
         </div>
       </div>
 
-      {/* OTHER SECTIONS */}
-      <div className="container">
-        <SectionSubscribe2 className="pb-24 lg:pb-32" />
-      </div>
+      {/* Autres sections peuvent être ajoutées ici */}
     </div>
   );
 };

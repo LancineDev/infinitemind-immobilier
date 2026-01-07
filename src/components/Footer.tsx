@@ -1,7 +1,6 @@
 "use client";
 
 import Logo from "@/shared/Logo";
-import SocialsList1 from "@/shared/SocialsList1";
 import { CustomLink } from "@/data/types";
 import React from "react";
 import FooterNav from "./FooterNav";
@@ -12,51 +11,27 @@ export interface WidgetFooterMenu {
   menus: CustomLink[];
 }
 
-const widgetMenus: WidgetFooterMenu[] = [
-  {
-    id: "5",
-    title: "Getting started",
-    menus: [
-      { href: "#", label: "Installation" },
-      { href: "#", label: "Release Notes" },
-      { href: "#", label: "Upgrade Guide" },
-      { href: "#", label: "Browser Support" },
-      { href: "#", label: "Editor Support" },
-    ],
-  },
-  {
-    id: "1",
-    title: "Explore",
-    menus: [
-      { href: "#", label: "Design features" },
-      { href: "#", label: "Prototyping" },
-      { href: "#", label: "Design systems" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Security" },
-    ],
-  },
-  {
-    id: "2",
-    title: "Resources",
-    menus: [
-      { href: "#", label: "Best practices" },
-      { href: "#", label: "Support" },
-      { href: "#", label: "Developers" },
-      { href: "#", label: "Learn design" },
-      { href: "#", label: "Releases" },
-    ],
-  },
-  {
-    id: "4",
-    title: "Community",
-    menus: [
-      { href: "#", label: "Discussion Forums" },
-      { href: "#", label: "Code of Conduct" },
-      { href: "#", label: "Community Resources" },
-      { href: "#", label: "Contributing" },
-      { href: "#", label: "Concurrent Mode" },
-    ],
-  },
+// Simple site menu for real estate
+const siteMenu: CustomLink[] = [
+  { href: "/", label: "Accueil" },
+  { href: "/listings", label: "Biens immobiliers" },
+  { href: "/add-listing-protected", label: "Ajouter une annonce" },
+  { href: "/agents", label: "Page agent" },
+  { href: "https://wa.me/2250712129409", label: "Nous contacter (WhatsApp)" },
+];
+
+// Sample top agents (Top 10 du mois) — content immobilier CI
+const TOP_AGENTS = [
+  { id: 1, name: "A. Kouassi", city: "Abidjan", rating: 4.9 },
+  { id: 2, name: "M. Traoré", city: "Cocody", rating: 4.8 },
+  { id: 3, name: "S. Koffi", city: "Plateau", rating: 4.8 },
+  { id: 4, name: "R. Yao", city: "Yopougon", rating: 4.7 },
+  { id: 5, name: "L. N'Dri", city: "Marcory", rating: 4.7 },
+  { id: 6, name: "F. Zadi", city: "Abidjan", rating: 4.6 },
+  { id: 7, name: "C. Ouattara", city: "Cocody", rating: 4.6 },
+  { id: 8, name: "D. Mensah", city: "Marcory", rating: 4.5 },
+  { id: 9, name: "E. Kone", city: "Plateau", rating: 4.5 },
+  { id: 10, name: "G. Coulibaly", city: "Yopougon", rating: 4.4 },
 ];
 
 const Footer: React.FC = () => {
@@ -66,25 +41,18 @@ const Footer: React.FC = () => {
     "Bonjour, je suis intéressé par un bien immobilier. Pouvez-vous me contacter ?"
   )}`;
 
-  const renderWidgetMenuItem = (menu: WidgetFooterMenu, index: number) => {
+  const renderAgent = (agent: any, index: number) => {
+    const avatar = agent.name.split(" ")[0].charAt(0);
     return (
-      <div key={index} className="text-sm">
-        <h2 className="font-semibold text-neutral-700 dark:text-neutral-200">
-          {menu.title}
-        </h2>
-        <ul className="mt-5 space-y-4">
-          {menu.menus.map((item, index) => (
-            <li key={index}>
-              <a
-                key={index}
-                className="text-neutral-6000 dark:text-neutral-300 hover:text-black dark:hover:text-white"
-                href={item.href}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div key={index} className="flex items-center space-x-3">
+        <div className="w-10 h-10 rounded-full bg-neutral-200 flex items-center justify-center text-sm font-semibold">
+          {avatar}
+        </div>
+        <div className="flex-1 text-sm">
+          <div className="font-medium">{agent.name}</div>
+          <div className="text-neutral-500 text-xs">{agent.city} · Côte d’Ivoire</div>
+        </div>
+        <div className="text-sm font-semibold">{agent.rating}</div>
       </div>
     );
   };
@@ -93,27 +61,50 @@ const Footer: React.FC = () => {
     <>
       <FooterNav />
 
-      <div className="nc-Footer relative py-24 lg:py-28 border-t border-neutral-200 dark:border-neutral-700">
-        <div className="container grid grid-cols-2 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-10 ">
-          <div className="grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">
-            <div className="col-span-2 md:col-span-1">
-              <Logo />
+      <div className="nc-Footer relative py-16 lg:py-20 border-t border-neutral-200 dark:border-neutral-700">
+        <div className="container grid grid-cols-1 gap-y-8 gap-x-6 md:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 ">
+          {/* Logo + Contact */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-1">
+            <Logo />
+            <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-300">
+              Plateforme immobilière dédiée à la Côte d’Ivoire. Trouvez, publiez et contactez facilement des propriétaires et agents.
+            </p>
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md text-sm"
+            >
+              Contact WhatsApp : +225 07 12 12 94 09
+            </a>
+          </div>
+
+          {/* Top agents */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-3">
+            <h3 className="text-lg font-semibold">Nos meilleurs agents – Top 10 du mois</h3>
+            <p className="text-sm text-neutral-500 mt-1">Classement basé sur les avis clients et la qualité des biens proposés</p>
+
+            <div className="mt-4 space-y-3">
+              {TOP_AGENTS.slice(0, 5).map(renderAgent)}
             </div>
-            <div className="col-span-2 flex items-center md:col-span-3">
-              <SocialsList1 className="flex items-center space-x-3 lg:space-x-0 lg:flex-col lg:space-y-2.5 lg:items-start" />
-            </div>
-            <div className="col-span-4 mt-4 md:col-span-4">
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md text-sm"
-              >
-                Contacter via WhatsApp
-              </a>
+
+            <div className="mt-4 flex space-x-3">
+              <a href="/agents" className="px-4 py-2 border rounded-md text-sm">Voir plus</a>
+              <a href="/agents/signup" className="px-4 py-2 bg-green-600 text-white rounded-md text-sm">Devenir agent</a>
             </div>
           </div>
-          {widgetMenus.map(renderWidgetMenuItem)}
+
+          {/* Simple menu */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-1">
+            <h3 className="text-lg font-semibold">Menu</h3>
+            <ul className="mt-4 space-y-3 text-sm">
+              {siteMenu.map((item, idx) => (
+                <li key={idx}>
+                  <a href={item.href} className="text-neutral-700 dark:text-neutral-300 hover:underline">{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </>

@@ -8,13 +8,15 @@ import Textarea from "@/shared/Textarea";
 
 export interface AccountPageProps {}
 
-const AccountPage = () => {
+const AccountPage: FC<AccountPageProps> = () => {
   return (
     <div className="space-y-6 sm:space-y-8">
-      {/* HEADING */}
-      <h2 className="text-3xl font-semibold">Account infomation</h2>
+      {/* TITRE */}
+      <h2 className="text-3xl font-semibold">Informations du compte</h2>
       <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
+
       <div className="flex flex-col md:flex-row">
+        {/* AVATAR */}
         <div className="flex-shrink-0 flex items-start">
           <div className="relative rounded-full overflow-hidden flex">
             <Avatar sizeClass="w-32 h-32" />
@@ -34,8 +36,7 @@ const AccountPage = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-
-              <span className="mt-1 text-xs">Change Image</span>
+              <span className="mt-1 text-xs">Changer l'image</span>
             </div>
             <input
               type="file"
@@ -43,52 +44,55 @@ const AccountPage = () => {
             />
           </div>
         </div>
+
+        {/* FORMULAIRE */}
         <div className="flex-grow mt-10 md:mt-0 md:pl-16 max-w-3xl space-y-6">
           <div>
-            <Label>Name</Label>
-            <Input className="mt-1.5" defaultValue="Eden Tuan" />
+            <Label>Nom complet</Label>
+            <Input className="mt-1.5" defaultValue="Yao Kouadio" />
           </div>
-          {/* ---- */}
+
           <div>
-            <Label>Gender</Label>
+            <Label>Genre</Label>
             <Select className="mt-1.5">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Other">Other</option>
+              <option value="Male">Homme</option>
+              <option value="Female">Femme</option>
+              <option value="Other">Autre</option>
             </Select>
           </div>
-          {/* ---- */}
+
           <div>
-            <Label>Username</Label>
-            <Input className="mt-1.5" defaultValue="@eden_tuan" />
+            <Label>Nom d'utilisateur</Label>
+            <Input className="mt-1.5" defaultValue="@yao_kouadio" />
           </div>
-          {/* ---- */}
+
           <div>
             <Label>Email</Label>
-            <Input className="mt-1.5" defaultValue="example@email.com" />
+            <Input className="mt-1.5" defaultValue="yao.kouadio@email.ci" />
           </div>
-          {/* ---- */}
+
           <div className="max-w-lg">
-            <Label>Date of birth</Label>
+            <Label>Date de naissance</Label>
             <Input className="mt-1.5" type="date" defaultValue="1990-07-22" />
           </div>
-          {/* ---- */}
+
           <div>
-            <Label>Addess</Label>
-            <Input className="mt-1.5" defaultValue="New york, USA" />
+            <Label>Adresse</Label>
+            <Input className="mt-1.5" defaultValue="Abidjan, Côte d'Ivoire" />
           </div>
-          {/* ---- */}
+
           <div>
-            <Label>Phone number</Label>
-            <Input className="mt-1.5" defaultValue="003 888 232" />
+            <Label>Numéro de téléphone</Label>
+            <Input className="mt-1.5" defaultValue="+225 07 12 12 34" />
           </div>
-          {/* ---- */}
+
           <div>
-            <Label>About you</Label>
+            <Label>À propos de vous</Label>
             <Textarea className="mt-1.5" defaultValue="..." />
           </div>
+
           <div className="pt-2">
-            <ButtonPrimary>Update info</ButtonPrimary>
+            <ButtonPrimary>Enregistrer les modifications</ButtonPrimary>
           </div>
         </div>
       </div>

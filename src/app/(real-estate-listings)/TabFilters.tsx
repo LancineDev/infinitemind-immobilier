@@ -65,7 +65,7 @@ const TabFilters = () => {
                 open ? "!border-primary-500 " : ""
               }`}
             >
-              <span>Rooms of Beds</span>
+              <span>Chambres et lits</span>
               <i className="las la-angle-down ml-2"></i>
             </Popover.Button>
             <Transition
@@ -114,7 +114,7 @@ const TabFilters = () => {
                 open ? "!border-primary-500 " : ""
               }`}
             >
-              <span>Type of property</span>
+              <span>Type de propriété</span>
               <i className="las la-angle-down ml-2"></i>
             </Popover.Button>
             <Transition
@@ -168,9 +168,9 @@ const TabFilters = () => {
               className={`flex items-center justify-center px-4 py-2 text-sm rounded-full border border-primary-500 bg-primary-50 text-primary-700 focus:outline-none `}
             >
               <span>
-                {`$${convertNumbThousand(
+                {`${convertNumbThousand(
                   rangePrices[0]
-                )} - $${convertNumbThousand(rangePrices[1])}`}{" "}
+                )} FCFA - ${convertNumbThousand(rangePrices[1])} FCFA`}{" "}
               </span>
               {renderXClear()}
             </Popover.Button>
@@ -204,12 +204,12 @@ const TabFilters = () => {
                           htmlFor="minPrice"
                           className="block text-sm font-medium text-neutral-700 dark:text-neutral-300"
                         >
-                          Min price
+                          Prix minimum
                         </label>
                         <div className="mt-1 relative rounded-md">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <span className="text-neutral-500 sm:text-sm">
-                              $
+                              FCFA
                             </span>
                           </div>
                           <input
@@ -227,12 +227,12 @@ const TabFilters = () => {
                           htmlFor="maxPrice"
                           className="block text-sm font-medium text-neutral-700 dark:text-neutral-300"
                         >
-                          Max price
+                          Prix maximum
                         </label>
                         <div className="mt-1 relative rounded-md">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <span className="text-neutral-500 sm:text-sm">
-                              $
+                              FCFA
                             </span>
                           </div>
                           <input
@@ -277,7 +277,7 @@ const TabFilters = () => {
         }`}
         onClick={() => setIsOnSale(!isOnSale)}
       >
-        <span>On sale</span>
+        <span>En promotion</span>
         {isOnSale && renderXClear()}
       </div>
     );
@@ -426,12 +426,12 @@ const TabFilters = () => {
                                   htmlFor="minPrice"
                                   className="block text-sm font-medium text-neutral-700 dark:text-neutral-300"
                                 >
-                                  Min price
+                                  Prix minimum
                                 </label>
                                 <div className="mt-1 relative rounded-md">
                                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <span className="text-neutral-500 sm:text-sm">
-                                      $
+                                      FCFA
                                     </span>
                                   </div>
                                   <input
@@ -449,12 +449,12 @@ const TabFilters = () => {
                                   htmlFor="maxPrice"
                                   className="block text-sm font-medium text-neutral-700 dark:text-neutral-300"
                                 >
-                                  Max price
+                                  Prix maximum
                                 </label>
                                 <div className="mt-1 relative rounded-md">
                                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <span className="text-neutral-500 sm:text-sm">
-                                      $
+                                      FCFA
                                     </span>
                                   </div>
                                   <input

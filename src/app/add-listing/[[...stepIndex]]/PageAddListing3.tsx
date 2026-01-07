@@ -8,7 +8,7 @@ export interface PageAddListing3Props {}
 const PageAddListing3: FC<PageAddListing3Props> = () => {
   return (
     <>
-      <h2 className="text-2xl font-semibold">Size of your location</h2>
+      <h2 className="text-2xl font-semibold">Taille de votre emplacement</h2>
       <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
       {/* FORM */}
       <div className="space-y-8">

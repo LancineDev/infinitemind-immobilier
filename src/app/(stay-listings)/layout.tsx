@@ -2,7 +2,7 @@ import BackgroundSection from "@/components/BackgroundSection";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
 import SectionGridAuthorBox from "@/components/SectionGridAuthorBox";
 import SectionSliderNewCategories from "@/components/SectionSliderNewCategories";
-import SectionSubscribe2 from "@/components/SectionSubscribe2";
+// newsletter removed
 import React, { ReactNode } from "react";
 import SectionHeroArchivePage from "../(server-components)/SectionHeroArchivePage";
 
@@ -31,8 +31,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           />
         </div>
 
-        {/* SECTION */}
-        <SectionSubscribe2 className="py-24 lg:py-28" />
+        {/* newsletter removed */}
 
         {/* SECTION */}
         <div className="relative py-16 mb-24 lg:mb-28">

@@ -9,40 +9,40 @@ import { headerCurrency } from "./CurrencyDropdown";
 
 export const headerLanguage = [
   {
-    id: "English",
-    name: "English",
-    description: "United State",
+    id: "Francais",
+    name: "Français",
+    description: "France",
     href: "##",
     active: true,
   },
   {
-    id: "Vietnamese",
-    name: "Vietnamese",
-    description: "Vietnamese",
-    href: "##",
-  },
-  {
     id: "Francais",
-    name: "Francais",
+    name: "Français",
     description: "Belgique",
     href: "##",
   },
   {
     id: "Francais",
-    name: "Francais",
+    name: "Français",
     description: "Canada",
     href: "##",
   },
   {
     id: "Francais",
-    name: "Francais",
-    description: "Belgique",
+    name: "Français",
+    description: "Suisse",
     href: "##",
   },
   {
-    id: "Francais",
-    name: "Francais",
-    description: "Canada",
+    id: "English",
+    name: "English",
+    description: "United States",
+    href: "##",
+  },
+  {
+    id: "English",
+    name: "English",
+    description: "United Kingdom",
     href: "##",
   },
 ];
@@ -88,17 +88,14 @@ const LangDropdown: FC<LangDropdownProps> = ({
     return (
       <div className="grid gap-7 lg:grid-cols-2">
         {headerCurrency.map((item, index) => (
-          <a
+          <button
             key={index}
-            href={item.href}
             onClick={() => close()}
-            className={`flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 ${
-              item.active ? "bg-gray-100 dark:bg-gray-700" : "opacity-80"
-            }`}
+            className={`flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 opacity-80`}
           >
             <item.icon className="w-[18px] h-[18px] " />
             <p className="ml-2 text-sm font-medium ">{item.name}</p>
-          </a>
+          </button>
         ))}
       </div>
     );
@@ -136,7 +133,7 @@ const LangDropdown: FC<LangDropdownProps> = ({
                 <div className="p-3 sm:p-6 rounded-2xl bg-white dark:bg-neutral-800 shadow-lg ring-1 ring-black ring-opacity-5">
                   <Tab.Group>
                     <Tab.List className="flex space-x-1 rounded-full bg-gray-100 dark:bg-slate-700 p-1">
-                      {["Language", "Currency"].map((category) => (
+                      {["Langue", "Devise"].map((category) => (
                         <Tab
                           key={category}
                           className={({ selected }) =>

@@ -23,7 +23,7 @@ const Avatar: FC<AvatarProps> = ({
   hasCheckedClass = "w-4 h-4 -top-0.5 -right-0.5",
 }) => {
   const url = imgUrl || "";
-  const name = userName || "John Doe";
+  const name = userName || "Utilisateur LancineDEV";
   const _setBgColor = (name: string) => {
     const backgroundIndex = Math.floor(
       name.charCodeAt(0) % avatarColors.length

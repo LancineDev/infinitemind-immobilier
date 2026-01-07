@@ -101,7 +101,7 @@ const SiteHeader = () => {
   const renderRadioHomePages = () => {
     return (
       <div className="mt-4">
-        <span className="text-sm font-medium">Home Demos</span>
+        <span className="text-sm font-medium">Démos Accueil</span>
         <div className="mt-1.5 flex items-center space-x-2">
           {homePages.map((home) => {
             return (

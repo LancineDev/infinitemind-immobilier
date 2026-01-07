@@ -1,0 +1,7 @@
+export const CLOUDINARY_CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "";
+export const CLOUDINARY_UPLOAD_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "";
+export const SHEETS_CSV_URL = process.env.NEXT_PUBLIC_SHEETS_CSV_URL || "";
+export const SHEETS_ENDPOINT = process.env.NEXT_PUBLIC_SHEETS_ENDPOINT || "";
+
+// Instructions for the deploy: set NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME and NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
+// and either NEXT_PUBLIC_SHEETS_CSV_URL (public CSV export) or NEXT_PUBLIC_SHEETS_ENDPOINT (Apps Script URL to accept JSON POST)

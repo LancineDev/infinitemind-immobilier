@@ -643,13 +643,17 @@ const TabFilters = () => {
                       onClick={closeModalMoreFilterMobile}
                       sizeClass="px-4 py-2 sm:px-5"
                     >
-                      Clear
+                      Effacer
                     </ButtonThird>
                     <ButtonPrimary
-                      onClick={closeModalMoreFilterMobile}
+                      onClick={() => {
+                        // Appliquer les filtres et recharger la page
+                        const currentUrl = window.location.pathname + window.location.search;
+                        window.location.reload();
+                      }}
                       sizeClass="px-4 py-2 sm:px-5"
                     >
-                      Apply
+                      Appliquer
                     </ButtonPrimary>
                   </div>
                 </div>

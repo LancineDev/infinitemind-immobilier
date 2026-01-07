@@ -1,7 +1,5 @@
 import SectionSliderNewCategories from "@/components/SectionSliderNewCategories";
 import React from "react";
-import SectionSubscribe2 from "@/components/SectionSubscribe2";
-import SectionOurFeatures from "@/components/SectionOurFeatures";
 import SectionHowItWork from "@/components/SectionHowItWork";
 import BackgroundSection from "@/components/BackgroundSection";
 import { TaxonomyType } from "@/data/types";
@@ -35,69 +33,69 @@ import SectionDowloadApp from "../SectionDowloadApp";
 import SectionHero2 from "@/app/(server-components)/SectionHero2";
 import Image from "next/image";
 
-const DEMO_CATS_2: TaxonomyType[] = [
+const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   {
     id: "1",
     href: "/listing-real-estate",
-    name: "Enjoy the great cold",
+    name: "Maisons de luxe",
     taxonomy: "category",
-    count: 188288,
+    count: 1245,
     thumbnail:
-      "https://images.pexels.com/photos/5764100/pexels-photo-5764100.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
   },
   {
     id: "2",
     href: "/listing-real-estate",
-    name: "Sleep in a floating way",
+    name: "Appartements modernes",
     taxonomy: "category",
-    count: 188288,
+    count: 856,
     thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "3",
     href: "/listing-real-estate",
-    name: "In the billionaire's house",
+    name: "Villas prestige",
     taxonomy: "category",
-    count: 188288,
+    count: 623,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "4",
     href: "/listing-real-estate",
-    name: "Cool in the deep forest",
+    name: "Terrains à bâtir",
     taxonomy: "category",
-    count: 188288,
+    count: 412,
     thumbnail:
-      "https://images.pexels.com/photos/247532/pexels-photo-247532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "5",
     href: "/listing-real-estate",
-    name: "In the billionaire's house",
+    name: "Propriétés commerciales",
     taxonomy: "category",
-    count: 188288,
+    count: 389,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "6",
     href: "/listing-real-estate",
-    name: "Sleep in a floating way",
+    name: "Studios meublés",
     taxonomy: "category",
-    count: 188288,
+    count: 267,
     thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/271644/pexels-photo-271644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "7",
     href: "/listing-real-estate",
-    name: "In the billionaire's house",
+    name: "Maisons de ville",
     taxonomy: "category",
-    count: 188288,
+    count: 298,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
 ];
 
@@ -137,22 +135,22 @@ function PageHome2() {
               id: 1,
               img: HIW1img,
               imgDark: HIW1imgDark,
-              title: "Smart search",
-              desc: "Name the area or type of home you are looking for the search bar. Our app will find you the perfect match.",
+              title: "Recherche intelligente",
+              desc: "Indiquez la zone ou le type de bien que vous recherchez dans la barre de recherche. Notre application trouvera la correspondance parfaite.",
             },
             {
               id: 2,
               img: HIW2img,
               imgDark: HIW2imgDark,
-              title: "Choose property",
-              desc: "From the number of options our app will provide, you can select any property that you like to explore.",
+              title: "Choisissez votre propriété",
+              desc: "Parmi les nombreuses options que notre application vous fournira, vous pouvez sélectionner la propriété que vous souhaitez explorer.",
             },
             {
               id: 3,
               img: HIW3img,
               imgDark: HIW3imgDark,
-              title: "Book you property",
-              desc: "Find a home or space from our search bar. Enter your specific location, property type and price range.",
+              title: "Réservez votre propriété",
+              desc: "Trouvez une maison ou un espace grâce à notre barre de recherche. Entrez votre localisation spécifique, le type de propriété et votre budget.",
             },
           ]}
         />
@@ -162,12 +160,11 @@ function PageHome2() {
           <SectionGridFeatureProperty />
         </div>
 
-        <SectionOurFeatures type="type2" rightImg={rightImgPng} />
 
         <SectionDowloadApp />
 
         <SectionSliderNewCategories
-          categories={DEMO_CATS_2}
+          categories={CATEGORIES_IMMOBILIERES}
           categoryCardType="card4"
           itemPerRow={4}
           heading="Suggestions de propriétés"
@@ -184,9 +181,8 @@ function PageHome2() {
           subHeading="Explorez les propriétés par différents types"
           categoryCardType="card5"
           itemPerRow={5}
+          categories={CATEGORIES_IMMOBILIERES}
         />
-
-        <SectionSubscribe2 />
       </div>
     </main>
   );

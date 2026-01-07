@@ -15,7 +15,8 @@ export interface PropertyCardHProps {
 
 const DEMO_DATA = DEMO_PROPERTY_LISTINGS[0];
 
-import { AGENT_PHONE } from "@/contains/contants";
+// Numéro de téléphone de l'agent
+const AGENT_PHONE = "2250712129409";
 
 const formatPriceXOF = (price: any) => {
   try {

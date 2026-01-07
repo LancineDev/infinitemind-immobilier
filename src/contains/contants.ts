@@ -1,4 +1,7 @@
-const avatarColors = [
+﻿// src/contains/contants.ts
+
+// Liste des couleurs pour les avatars
+export const avatarColors = [
   "#ffdd00",
   "#fbb034",
   "#ff4c4c",
@@ -27,4 +30,5 @@ const avatarColors = [
   "#E208A7",
 ];
 
-export { avatarColors };
+// Numéro de téléphone de l'agent (sans + et espaces)
+export const AGENT_PHONE = "2250712129409";

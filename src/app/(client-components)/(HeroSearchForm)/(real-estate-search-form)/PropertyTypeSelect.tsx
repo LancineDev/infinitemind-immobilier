@@ -7,24 +7,24 @@ import { HomeIcon } from "@heroicons/react/24/outline";
 
 const defaultPropertyType: ClassOfProperties[] = [
   {
-    name: "Duplex House",
-    description: "Have a place to yourself",
+    name: "Maison Duplex",
+    description: "Avoir un endroit pour vous",
     checked: true,
   },
   {
-    name: "Ferme House",
-    description: "Have your own room and share some common spaces",
+    name: "Maison de campagne",
+    description: "Avoir votre propre chambre et partager des espaces communs",
     checked: false,
   },
   {
-    name: "Chalet House",
+    name: "Maison Chalet",
     description:
-      "Have a private or shared room in a boutique hotel, hostel, and more",
+      "Avoir une chambre privée ou partagée dans un hôtel de charme, auberge, et plus",
     checked: false,
   },
   {
-    name: "Maison House",
-    description: "Stay in a shared space, like a common room",
+    name: "Maison traditionnelle",
+    description: "Séjourner dans un espace partagé, comme une salle commune",
     checked: false,
   },
 ];
@@ -70,7 +70,7 @@ const PropertyTypeSelect: FC<PropertyTypeSelectProps> = ({
                 </span>
               </span>
               <span className="block mt-1 text-sm text-neutral-400 leading-none font-light ">
-                Property type
+                Type de propriété
               </span>
             </div>
           </Popover.Button>

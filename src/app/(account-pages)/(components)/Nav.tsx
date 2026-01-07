@@ -15,6 +15,17 @@ export const Nav = () => {
     "/account-billing",
   ];
 
+  // Fonction de traduction
+  const translateNav = (item: string): string => {
+    const translations: { [key: string]: string } = {
+      "/account": "Compte",
+      "/account-savelists": "Listes de sauvegarde",
+      "/account-password": "Mot de passe",
+      "/account-billing": "Paiements",
+    };
+    return translations[item] || item.replace("/", "").replace("-", " ");
+  };
+
   return (
     <div className="container">
       <div className="flex space-x-8 md:space-x-14 overflow-x-auto hiddenScrollbar">
@@ -30,7 +41,7 @@ export const Nav = () => {
                   : "border-transparent"
               }`}
             >
-              {item.replace("-", " ").replace("/", " ")}
+              {translateNav(item)}
             </Link>
           );
         })}

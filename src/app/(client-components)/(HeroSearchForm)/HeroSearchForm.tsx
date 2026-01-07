@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC, useState } from "react";
-import StaySearchForm from "./(stay-search-form)/StaySearchForm";
+import RealEstateSearchForm from "./(real-estate-search-form)/RealEstateSearchForm";
 
 export type SearchTab = "Properties";
 
@@ -48,7 +48,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
   const renderForm = () => {
     switch (tabActive) {
       case "Properties":
-        return <StaySearchForm />;
+        return <RealEstateSearchForm />;
 
       default:
         return null;

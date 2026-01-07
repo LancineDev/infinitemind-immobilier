@@ -34,8 +34,8 @@ export default function AvatarDropdown({ className = "" }: Props) {
                       <Avatar sizeClass="w-12 h-12" />
 
                       <div className="flex-grow">
-                        <h4 className="font-semibold">Eden Smith</h4>
-                        <p className="text-xs mt-0.5">Los Angeles, CA</p>
+                        <h4 className="font-semibold">Yao Kouadio</h4>
+                        <p className="text-xs mt-0.5">Abidjan, Côte d'Ivoire</p>
                       </div>
                     </div>
 
@@ -72,7 +72,7 @@ export default function AvatarDropdown({ className = "" }: Props) {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <p className="text-sm font-medium ">{"My Account"}</p>
+                        <p className="text-sm font-medium ">{"Mon compte"}</p>
                       </div>
                     </Link>
 
@@ -124,7 +124,7 @@ export default function AvatarDropdown({ className = "" }: Props) {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <p className="text-sm font-medium ">{"My bookings"}</p>
+                        <p className="text-sm font-medium ">{"Mes réservations"}</p>
                       </div>
                     </Link>
 
@@ -151,7 +151,7 @@ export default function AvatarDropdown({ className = "" }: Props) {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <p className="text-sm font-medium ">{"Wishlist"}</p>
+                        <p className="text-sm font-medium ">{"Favoris"}</p>
                       </div>
                     </Link>
 
@@ -192,7 +192,7 @@ export default function AvatarDropdown({ className = "" }: Props) {
                           </svg>
                         </div>
                         <div className="ml-4">
-                          <p className="text-sm font-medium ">{"Dark theme"}</p>
+                          <p className="text-sm font-medium ">{"Thème sombre"}</p>
                         </div>
                       </div>
                       <SwitchDarkMode2 />
@@ -257,15 +257,20 @@ export default function AvatarDropdown({ className = "" }: Props) {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <p className="text-sm font-medium ">{"Help"}</p>
+                        <p className="text-sm font-medium ">{"Aide"}</p>
                       </div>
                     </Link>
 
                     {/* ------------------ 2 --------------------- */}
-                    <Link
-                      href={"/#"}
+                    <button
                       className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-                      onClick={() => close()}
+                      onClick={() => {
+                        // Effacer les cookies d'authentification
+                        document.cookie = 'addListingAuth=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+                        // Rediriger vers la page d'accueil
+                        window.location.href = '/';
+                        close();
+                      }}
                     >
                       <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">
                         <svg
@@ -299,9 +304,9 @@ export default function AvatarDropdown({ className = "" }: Props) {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <p className="text-sm font-medium ">{"Log out"}</p>
+                        <p className="text-sm font-medium ">{"Déconnexion"}</p>
                       </div>
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </Popover.Panel>

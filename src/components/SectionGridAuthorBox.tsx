@@ -1,11 +1,10 @@
+import React, { FC } from "react";
+import Heading from "@/shared/Heading";
 import CardAuthorBox from "@/components/CardAuthorBox";
 import CardAuthorBox2 from "@/components/CardAuthorBox2";
-import Heading from "@/shared/Heading";
+import AuthorButtons from "@/components/AuthorButtons";
 import { DEMO_AUTHORS } from "@/data/authors";
 import { AuthorType } from "@/data/types";
-import React, { FC } from "react";
-import ButtonPrimary from "@/shared/ButtonPrimary";
-import ButtonSecondary from "@/shared/ButtonSecondary";
 
 export interface SectionGridAuthorBoxProps {
   className?: string;
@@ -43,10 +42,7 @@ const SectionGridAuthorBox: FC<SectionGridAuthorBoxProps> = ({
           )
         )}
       </div>
-      <div className="mt-16 flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-5">
-        <ButtonSecondary loading>Voir plus</ButtonSecondary>
-        <ButtonPrimary>Devenir agent</ButtonPrimary>
-      </div>
+      <AuthorButtons />
     </div>
   );
 };

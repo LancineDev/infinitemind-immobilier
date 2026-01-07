@@ -105,3 +105,5 @@ Les routes `/listing-stay` existent toujours et doivent être migrées:
 **Date:** [Session actuelle]
 **Status:** Phases 1-3 complétées, Phase 4 en attente
 
+
+

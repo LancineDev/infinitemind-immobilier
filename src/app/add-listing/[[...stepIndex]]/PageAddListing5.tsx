@@ -45,78 +45,74 @@ const PageAddListing5: FC<PageAddListing5Props> = () => {
     <>
       <div>
         <h2 className="text-2xl font-semibold">
-          Set house rules for your guests{" "}
+          Définir les règles de la maison pour vos invités
         </h2>
         <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-          Guests must agree to your house rules before they book.
+          Les invités doivent accepter vos règles avant de réserver.
         </span>
       </div>
       <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-      {/* FORM */}
+
+      {/* FORMULAIRE */}
       <div className="space-y-8">
         {/* ITEM */}
         <div>
-          <label className="text-lg font-semibold" htmlFor="">
-            General amenities
+          <label className="text-lg font-semibold">
+            Fumer / Tabac
           </label>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {renderRadio("Smoking", "Do", "Do not allow")}
-            {renderRadio("Smoking", "Allow", "Allow", true)}
-            {renderRadio("Smoking", "Charge", "Charge")}
+            {renderRadio("Smoking", "Do", "Interdit")}
+            {renderRadio("Smoking", "Allow", "Autorisé", true)}
+            {renderRadio("Smoking", "Charge", "Payant")}
           </div>
         </div>
 
         {/* ITEM */}
         <div>
-          <label className="text-lg font-semibold" htmlFor="">
-            Pet
-          </label>
+          <label className="text-lg font-semibold">Animaux</label>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {renderRadio("Pet", "Do", "Do not allow")}
-            {renderRadio("Pet", "Allow", "Allow", true)}
-            {renderRadio("Pet", "Charge", "Charge")}
+            {renderRadio("Pet", "Do", "Interdits")}
+            {renderRadio("Pet", "Allow", "Autorisés", true)}
+            {renderRadio("Pet", "Charge", "Payants")}
           </div>
         </div>
 
         {/* ITEM */}
         <div>
-          <label className="text-lg font-semibold" htmlFor="">
-            Party organizing
-          </label>
+          <label className="text-lg font-semibold">Organisation de fêtes</label>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {renderRadio("Partyorganizing", "Do", "Do not allow")}
-            {renderRadio("Partyorganizing", "Allow", "Allow", true)}
-            {renderRadio("Partyorganizing", "Charge", "Charge")}
+            {renderRadio("Partyorganizing", "Do", "Interdit")}
+            {renderRadio("Partyorganizing", "Allow", "Autorisé", true)}
+            {renderRadio("Partyorganizing", "Charge", "Payant")}
           </div>
         </div>
 
         {/* ITEM */}
         <div>
-          <label className="text-lg font-semibold" htmlFor="">
-            Cooking
-          </label>
+          <label className="text-lg font-semibold">Cuisine</label>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {renderRadio("Cooking", "Do", "Do not allow")}
-            {renderRadio("Cooking", "Allow", "Allow", true)}
-            {renderRadio("Cooking", "Charge", "Charge")}
+            {renderRadio("Cooking", "Do", "Interdit")}
+            {renderRadio("Cooking", "Allow", "Autorisé", true)}
+            {renderRadio("Cooking", "Charge", "Payant")}
           </div>
         </div>
 
         {/* ----------- */}
-        <div className=" border-b border-neutral-200 dark:border-neutral-700"></div>
-        <span className="block text-lg font-semibold">Additional rules</span>
+        <div className="border-b border-neutral-200 dark:border-neutral-700"></div>
+        <span className="block text-lg font-semibold">Règles supplémentaires</span>
         <div className="flow-root">
           <div className="-my-3 divide-y divide-neutral-100 dark:divide-neutral-800">
-            {renderNoInclude("No smoking in common areas")}
-            {renderNoInclude("Do not wear shoes/shoes in the house")}
-            {renderNoInclude("No cooking in the bedroom")}
+            {renderNoInclude("Interdiction de fumer dans les espaces communs")}
+            {renderNoInclude("Ne pas porter de chaussures dans la maison")}
+            {renderNoInclude("Interdiction de cuisiner dans la chambre")}
           </div>
         </div>
+
         <div className="flex flex-col sm:flex-row sm:justify-between space-y-3 sm:space-y-0 sm:space-x-5">
-          <Input className="!h-full" placeholder="No smoking..." />
+          <Input className="!h-full" placeholder="Ajouter une règle..." />
           <ButtonPrimary className="flex-shrink-0">
             <i className="text-xl las la-plus"></i>
-            <span className="ml-3">Add tag</span>
+            <span className="ml-3">Ajouter un tag</span>
           </ButtonPrimary>
         </div>
       </div>

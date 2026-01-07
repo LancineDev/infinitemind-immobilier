@@ -15,7 +15,7 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
   defaultValue,
 }) => {
   const [rangePrices, setRangePrices] = useState(
-    defaultValue || [100000, 4000000]
+    defaultValue || [60000000, 2400000000]
   );
 
   useEffect(() => {
@@ -32,8 +32,8 @@ const PriceRangeInput: FC<PriceRangeInputProps> = ({
         <Slider
           range
           className="text-red-400"
-          min={10000}
-          max={10000000}
+          min={6000000}
+          max={600000000}
           defaultValue={[rangePrices[0], rangePrices[1]]}
           allowCross={false}
           step={1000}

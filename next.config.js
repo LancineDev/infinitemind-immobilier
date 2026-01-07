@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: false,
   experimental: {
     appDir: true,
-    typedRoutes: true,
+    // Disable typedRoutes to avoid strict Link href typing errors during local development
+    typedRoutes: false,
   },
   images: {
     remotePatterns: [

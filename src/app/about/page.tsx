@@ -6,7 +6,7 @@ import SectionHero from "./SectionHero";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
 import BackgroundSection from "@/components/BackgroundSection";
 import SectionClientSay from "@/components/SectionClientSay";
-import SectionSubscribe2 from "@/components/SectionSubscribe2";
+// newsletter removed
 
 export interface PageAboutProps {}
 
@@ -19,9 +19,9 @@ const PageAbout: FC<PageAboutProps> = ({}) => {
       <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
         <SectionHero
           rightImg={rightImg}
-          heading="👋 About Us."
+          heading="👋 À Propos de Nous."
           btnText=""
-          subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+          subHeading="Nous sommes impartiaux et indépendants, et chaque jour nous créons des programmes et contenus de classe mondiale qui informent, éduquent et divertissent des millions de personnes en Côte d'Ivoire et dans le monde."
         />
 
         <SectionFounder />
@@ -32,7 +32,7 @@ const PageAbout: FC<PageAboutProps> = ({}) => {
 
         <SectionStatistic />
 
-        <SectionSubscribe2 />
+        {/* newsletter removed */}
       </div>
     </div>
   );

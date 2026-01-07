@@ -14,7 +14,7 @@ const RealestateSearchForm = () => {
   >("location");
   //
   const [locationInputTo, setLocationInputTo] = useState("");
-  const [rangePrices, setRangePrices] = useState([100000, 4000000]);
+  const [rangePrices, setRangePrices] = useState([60000000, 2400000000]);
   const [typeOfProperty, setTypeOfProperty] = useState<ClassOfProperties[]>([
     {
       name: "Duplex House",

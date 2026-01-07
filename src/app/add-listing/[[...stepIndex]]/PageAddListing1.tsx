@@ -8,39 +8,44 @@ export interface PageAddListing1Props {}
 const PageAddListing1: FC<PageAddListing1Props> = () => {
   return (
     <>
-      <h2 className="text-2xl font-semibold">Choosing listing categories</h2>
+      <h2 className="text-2xl font-semibold">
+        Choisir les catégories d’annonces
+      </h2>
       <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-      {/* FORM */}
+
+      {/* FORMULAIRE */}
       <div className="space-y-8">
         {/* ITEM */}
         <FormItem
-          label="Choose a property type"
-          desc="Hotel: Professional hospitality businesses that usually have a unique style or theme defining their brand and decor"
+          label="Choisir un type de propriété"
+          desc="Hôtel : établissements d’hébergement professionnels ayant généralement un style ou un thème unique qui définit leur marque et leur décoration."
         >
           <Select>
-            <option value="Hotel">Hotel</option>
+            <option value="Hotel">Hôtel</option>
             <option value="Cottage">Cottage</option>
             <option value="Villa">Villa</option>
-            <option value="Cabin">Cabin</option>
-            <option value="Farm stay">Farm stay</option>
-            <option value="Houseboat">Houseboat</option>
-            <option value="Lighthouse">Lighthouse</option>
+            <option value="Cabin">Cabane</option>
+            <option value="Farm stay">Séjour à la ferme</option>
+            <option value="Houseboat">Maison flottante</option>
+            <option value="Lighthouse">Phare</option>
           </Select>
         </FormItem>
+
         <FormItem
-          label="Place name"
-          desc="A catchy name usually includes: House name + Room name + Featured property + Tourist destination"
+          label="Nom du logement"
+          desc="Un nom accrocheur inclut généralement : nom de la maison + nom de la chambre + caractéristique principale du bien + destination touristique."
         >
-          <Input placeholder="Places name" />
+          <Input placeholder="Nom du logement" />
         </FormItem>
+
         <FormItem
-          label="Rental form"
-          desc="Entire place: Guests have the whole place to themselves—there's a private entrance and no shared spaces. A bedroom, bathroom, and kitchen are usually included."
+          label="Type de location"
+          desc="Logement entier : les voyageurs disposent de tout le logement — entrée privée et aucun espace partagé. Une chambre, une salle de bain et une cuisine sont généralement incluses."
         >
           <Select>
-            <option value="Hotel">Entire place</option>
-            <option value="Private room">Private room</option>
-            <option value="Share room">Share room</option>
+            <option value="Entire place">Logement entier</option>
+            <option value="Private room">Chambre privée</option>
+            <option value="Share room">Chambre partagée</option>
           </Select>
         </FormItem>
       </div>

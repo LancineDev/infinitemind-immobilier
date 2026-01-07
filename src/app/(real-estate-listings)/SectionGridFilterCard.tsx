@@ -20,12 +20,12 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
   return (
     <div className={`nc-SectionGridFilterCard ${className}`}>
       <Heading2
-        heading="Property in Tokyo"
+        heading="Propriétés à Abidjan"
         subHeading={
           <span className="block text-neutral-500 dark:text-neutral-400 mt-3">
-            233 Property
+            112 propriétés
             <span className="mx-2">·</span>
-            Aug 12 - 18
+            Côte d'Ivoire
           </span>
         }
       />

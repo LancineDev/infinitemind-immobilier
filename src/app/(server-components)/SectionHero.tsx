@@ -26,7 +26,14 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
           </ButtonPrimary>
         </div>
         <div className="flex-grow">
-          <Image className="w-full" src={imagePng} alt="hero" priority />
+          <Image 
+            className="w-full rounded-2xl shadow-2xl" 
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" 
+            alt="Villa moderne de luxe en Côte d'Ivoire - Architecture contemporaine à Abidjan" 
+            priority 
+            width={600}
+            height={400}
+          />
         </div>
       </div>
 

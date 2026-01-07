@@ -10,20 +10,20 @@ export interface Statistic {
 const FOUNDER_DEMO: Statistic[] = [
   {
     id: "1",
-    heading: "10 million",
+    heading: "50 000+",
     subHeading:
-      "Articles have been public around the world (as of Sept. 30, 2021)",
+      "Propriétés immobilières publiées en Côte d'Ivoire (au 30 septembre 2026)",
   },
   {
     id: "2",
-    heading: "100,000",
-    subHeading: "Registered users account (as of Sept. 30, 2021)",
+    heading: "25 000+",
+    subHeading: "Utilisateurs enregistrés (au 30 septembre 2026)",
   },
   {
     id: "3",
-    heading: "220+",
+    heading: "15+",
     subHeading:
-      "Countries and regions have our presence (as of Sept. 30, 2021)",
+      "Villes couvertes en Côte d'Ivoire (au 30 septembre 2026)",
   },
 ];
 
@@ -35,10 +35,10 @@ const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
   return (
     <div className={`nc-SectionStatistic relative ${className}`}>
       <Heading
-        desc=" We’re impartial and independent, and every day we create distinctive,
-          world-class programmes and content"
+        desc="Nous sommes impartiaux et indépendants, et chaque jour nous créons des programmes
+          et contenus de classe mondiale"
       >
-        🚀 Fast Facts
+        🚀 Chiffres Clés
       </Heading>
       <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 xl:gap-8">
         {FOUNDER_DEMO.map((item) => (

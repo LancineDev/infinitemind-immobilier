@@ -3,146 +3,143 @@ import SectionHero from "@/app/(server-components)/SectionHero";
 import BgGlassmorphism from "@/components/BgGlassmorphism";
 import { TaxonomyType } from "@/data/types";
 import SectionSliderNewCategories from "@/components/SectionSliderNewCategories";
-import SectionOurFeatures from "@/components/SectionOurFeatures";
 import BackgroundSection from "@/components/BackgroundSection";
 import SectionGridFeaturePlaces from "@/components/SectionGridFeaturePlaces";
 import SectionHowItWork from "@/components/SectionHowItWork";
-import SectionSubscribe2 from "@/components/SectionSubscribe2";
 import SectionGridAuthorBox from "@/components/SectionGridAuthorBox";
 import SectionGridCategoryBox from "@/components/SectionGridCategoryBox";
-import SectionBecomeAnAuthor from "@/components/SectionBecomeAnAuthor";
-import SectionVideos from "@/components/SectionVideos";
-import SectionClientSay from "@/components/SectionClientSay";
+import BackToTop from "@/components/BackToTop";
+import ViewAllPropertiesButton from "@/components/ViewAllPropertiesButton";
 
-const DEMO_CATS: TaxonomyType[] = [
+const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listing-stay-map",
-    name: "Abidjan",
+    href: "/listing-real-estate",
+    name: "Maisons",
     taxonomy: "category",
     count: 1245,
     thumbnail:
-      "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "2",
-    href: "/listing-stay-map",
-    name: "Yamoussoukro",
+    href: "/listing-real-estate",
+    name: "Appartements",
     taxonomy: "category",
     count: 856,
     thumbnail:
-      "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "3",
-    href: "/listing-stay-map",
-    name: "Bouaké",
+    href: "/listing-real-estate",
+    name: "Villas",
     taxonomy: "category",
     count: 623,
     thumbnail:
-      "https://images.pexels.com/photos/5059013/pexels-photo-5059013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "4",
-    href: "/listing-stay-map",
-    name: "San-Pédro",
+    href: "/listing-real-estate",
+    name: "Terrains",
     taxonomy: "category",
     count: 412,
     thumbnail:
-      "https://images.pexels.com/photos/5159141/pexels-photo-5159141.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "5",
-    href: "/listing-stay-map",
-    name: "Korhogo",
+    href: "/listing-real-estate",
+    name: "Commercial",
     taxonomy: "category",
     count: 389,
     thumbnail:
-      "https://images.pexels.com/photos/7473041/pexels-photo-7473041.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "6",
-    href: "/listing-stay-map",
-    name: "Daloa",
+    href: "/listing-real-estate",
+    name: "Maisons de ville",
     taxonomy: "category",
     count: 298,
     thumbnail:
-      "https://images.pexels.com/photos/3250613/pexels-photo-3250613.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "7",
-    href: "/listing-stay-map",
-    name: "Man",
+    href: "/listing-real-estate",
+    name: "Studios",
     taxonomy: "category",
     count: 267,
     thumbnail:
-      "https://images.pexels.com/photos/7740160/pexels-photo-7740160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/271644/pexels-photo-271644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
 ];
 
-const DEMO_CATS_2: TaxonomyType[] = [
+const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listing-stay-map",
-    name: "Villas modernes",
+    href: "/listing-real-estate",
+    name: "Abidjan",
     taxonomy: "category",
     count: 188288,
     thumbnail:
-      "https://images.pexels.com/photos/5764100/pexels-photo-5764100.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "2",
-    href: "/listing-stay-map",
-    name: "Maisons au bord de l'eau",
+    href: "/listing-real-estate",
+    name: "Yamoussoukro",
     taxonomy: "category",
-    count: 188288,
+    count: 145233,
     thumbnail:
-      "https://images.pexels.com/photos/2869499/pexels-photo-2869499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "3",
-    href: "/listing-stay-map",
-    name: "Appartements de prestige",
+    href: "/listing-real-estate",
+    name: "Bouaké",
     taxonomy: "category",
-    count: 188288,
+    count: 98765,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "4",
-    href: "/listing-stay-map",
-    name: "Maisons avec jardin",
+    href: "/listing-real-estate",
+    name: "San-Pédro",
     taxonomy: "category",
-    count: 188288,
+    count: 76543,
     thumbnail:
-      "https://images.pexels.com/photos/247532/pexels-photo-247532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "5",
-    href: "/listing-stay-map",
-    name: "Appartements de prestige",
+    href: "/listing-real-estate",
+    name: "Korhogo",
     taxonomy: "category",
-    count: 188288,
+    count: 54321,
     thumbnail:
-      "https://images.pexels.com/photos/7031413/pexels-photo-7031413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   },
   {
     id: "6",
-    href: "/listing-stay-map",
-    name: "Appartements de prestige",
+    href: "/listing-real-estate",
+    name: "Daloa",
     taxonomy: "category",
-    count: 188288,
+    count: 43210,
     thumbnail:
-      "https://images.pexels.com/photos/9828170/pexels-photo-9828170.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "7",
-    href: "/listing-stay-map",
-    name: "Maisons avec jardin",
+    href: "/listing-real-estate",
+    name: "Man",
     taxonomy: "category",
-    count: 188288,
+    count: 32109,
     thumbnail:
-      "https://images.pexels.com/photos/247532/pexels-photo-247532.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/271644/pexels-photo-271644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
 ];
 
@@ -156,57 +153,56 @@ function PageHome() {
         {/* SECTION HERO */}
         <SectionHero className="pt-10 lg:pt-16 lg:pb-16" />
 
-        {/* SECTION 1 */}
-        <SectionSliderNewCategories categories={DEMO_CATS} />
+        {/* CATÉGORIES IMMOBILIÈRES */}
+        <SectionSliderNewCategories 
+          categories={CATEGORIES_IMMOBILIERES}
+          heading="Types de propriétés"
+          subHeading="Explorez notre sélection de biens immobiliers"
+        />
 
-        <SectionOurFeatures />
-
+        {/* PROPRIÉTÉS EN VEDETTE */}
         <SectionGridFeaturePlaces cardType="card2" />
 
+        {/* COMMENT ÇA MARCHE */}
         <SectionHowItWork />
 
+        {/* VILLES MISES EN AVANT */}
         <div className="relative py-16">
           <BackgroundSection className="bg-orange-50 dark:bg-black/20" />
           <SectionSliderNewCategories
-            categories={DEMO_CATS_2}
+            categories={VILLES_MISES_EN_AVANT}
             categoryCardType="card4"
             itemPerRow={4}
-            heading="Suggestions de propriétés"
-            subHeading="Propriétés populaires à découvrir"
+            heading="Propriétés par ville"
+            subHeading="Découvrez les biens disponibles dans votre région"
             sliderStyle="style2"
           />
         </div>
 
-        <SectionSubscribe2 />
-
-        <div className="relative py-16">
-          <BackgroundSection className="bg-orange-50 dark:bg-black dark:bg-opacity-20 " />
-          <SectionGridAuthorBox />
-        </div>
-
+        {/* CATÉGORIES DE PROPRIÉTÉS EN GRILLE */}
         <SectionGridCategoryBox />
 
+        {/* EXPLORER PAR TYPE DE PROPRIÉTÉ */}
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionBecomeAnAuthor />
-        </div>
-
-        <SectionSliderNewCategories
-          heading="Explorez par type de propriétés"
-          subHeading="Explorez les propriétés par différents types"
-          categoryCardType="card5"
-          itemPerRow={5}
-        />
-
-        <SectionVideos />
-
-        <div className="relative py-16">
-          <BackgroundSection />
-          <SectionClientSay />
+          <SectionSliderNewCategories
+            heading="Explorez par type de propriété"
+            subHeading="Trouvez le bien qui correspond à vos besoins"
+            categoryCardType="card5"
+            itemPerRow={5}
+            categories={CATEGORIES_IMMOBILIERES}
+          />
+          {/* BOUTON VOIR TOUTES LES PROPRIÉTÉS */}
+          <div className="mt-8 text-center">
+            <ViewAllPropertiesButton />
+          </div>
         </div>
       </div>
+      
+      {/* BOUTON RETOUR EN HAUT */}
+      <BackToTop />
     </main>
   );
-}
+};
 
 export default PageHome;

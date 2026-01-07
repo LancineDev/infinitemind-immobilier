@@ -1,35 +1,42 @@
+"use client";
+
 import { CustomLink } from "@/data/types";
 import React, { FC } from "react";
 import twFocusClass from "@/utils/twFocusClass";
 import Link from "next/link";
 import { Route } from "@/routers/types";
-
-const DEMO_PAGINATION: CustomLink[] = [
-  {
-    label: "1",
-    href: "#",
-  },
-  {
-    label: "2",
-    href: "#",
-  },
-  {
-    label: "3",
-    href: "#",
-  },
-  {
-    label: "4",
-    href: "#",
-  },
-];
+import { useSearchParams } from "next/navigation";
 
 export interface PaginationProps {
   className?: string;
 }
 
 const Pagination: FC<PaginationProps> = ({ className = "" }) => {
+  const searchParams = useSearchParams();
+  const currentPage = parseInt(searchParams.get('page') || '1');
+  
+  const DEMO_PAGINATION: CustomLink[] = [
+    {
+      label: "1",
+      href: "/listing-stay-map?page=1",
+    },
+    {
+      label: "2",
+      href: "/listing-stay-map?page=2",
+    },
+    {
+      label: "3",
+      href: "/listing-stay-map?page=3",
+    },
+    {
+      label: "4",
+      href: "/listing-stay-map?page=4",
+    },
+  ];
   const renderItem = (pag: CustomLink, index: number) => {
-    if (index === 0) {
+    const isActive = currentPage === (index + 1);
+    
+    if (isActive) {
       // RETURN ACTIVE PAGINATION
       return (
         <span

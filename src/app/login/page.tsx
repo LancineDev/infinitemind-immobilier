@@ -1,100 +1,119 @@
-import React, { FC } from "react";
+"use client";
+import { Route } from "@/routers/types";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import facebookSvg from "@/images/Facebook.svg";
 import twitterSvg from "@/images/Twitter.svg";
 import googleSvg from "@/images/Google.svg";
 import Input from "@/shared/Input";
 import ButtonPrimary from "@/shared/ButtonPrimary";
-import Image from "next/image";
-import Link from "next/link";
-
-export interface PageLoginProps {}
 
 const loginSocials = [
-  {
-    name: "Continue with Facebook",
-    href: "#",
-    icon: facebookSvg,
-  },
-  {
-    name: "Continue with Twitter",
-    href: "#",
-    icon: twitterSvg,
-  },
-  {
-    name: "Continue with Google",
-    href: "#",
-    icon: googleSvg,
-  },
+  { name: "Continuer avec Facebook", href: "#", icon: facebookSvg },
+  { name: "Continuer avec Twitter", href: "#", icon: twitterSvg },
+  { name: "Continuer avec Google", href: "#", icon: googleSvg },
 ];
 
-const PageLogin: FC<PageLoginProps> = ({}) => {
-  return (
-    <div className={`nc-PageLogin`}>
-      <div className="container mb-24 lg:mb-32">
-        <h2 className="my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
-          Login
-        </h2>
-        <div className="max-w-md mx-auto space-y-6">
-          <div className="grid gap-3">
-            {loginSocials.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className="flex w-full rounded-lg bg-primary-50 dark:bg-neutral-800 px-4 py-3 transform transition-transform sm:px-6 hover:translate-y-[-2px]"
-              >
-                <Image
-                  className="flex-shrink-0"
-                  src={item.icon}
-                  alt={item.name}
-                />
-                <h3 className="flex-grow text-center text-sm font-medium text-neutral-700 dark:text-neutral-300 sm:text-sm">
-                  {item.name}
-                </h3>
-              </a>
-            ))}
-          </div>
-          {/* OR */}
-          <div className="relative text-center">
-            <span className="relative z-10 inline-block px-4 font-medium text-sm bg-white dark:text-neutral-400 dark:bg-neutral-900">
-              OR
-            </span>
-            <div className="absolute left-0 w-full top-1/2 transform -translate-y-1/2 border border-neutral-100 dark:border-neutral-800"></div>
-          </div>
-          {/* FORM */}
-          <form className="grid grid-cols-1 gap-6" action="#" method="post">
-            <label className="block">
-              <span className="text-neutral-800 dark:text-neutral-200">
-                Email address
-              </span>
-              <Input
-                type="email"
-                placeholder="example@example.com"
-                className="mt-1"
-              />
-            </label>
-            <label className="block">
-              <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
-                Password
-                <Link href="/login" className="text-sm underline font-medium">
-                  Forgot password?
-                </Link>
-              </span>
-              <Input type="password" className="mt-1" />
-            </label>
-            <ButtonPrimary type="submit">Continue</ButtonPrimary>
-          </form>
+export default function PageLogin() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-          {/* ==== */}
-          <span className="block text-center text-neutral-700 dark:text-neutral-300">
-            New user? {` `}
-            <Link href="/signup" className="font-semibold underline">
-              Create an account
-            </Link>
-          </span>
-        </div>
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+    
+    // Mock authentication for demo purposes
+    try {
+      // Simple validation
+      if (email && password) {
+        // Store mock user session
+        localStorage.setItem('user', JSON.stringify({ email }));
+        router.push("/owner-dashboard");
+      } else {
+        setError("Veuillez remplir tous les champs");
+      }
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError(String(err));
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="nc-PageLogin container py-12 max-w-md mx-auto">
+      <h2 className="text-3xl md:text-4xl font-semibold text-center mb-8">
+        Connexion
+      </h2>
+
+      {/* Social login buttons */}
+      <div className="grid gap-3 mb-6">
+        {loginSocials.map((item, index) => (
+          <a
+            key={index}
+            href={item.href}
+            aria-label={item.name}
+            className="flex items-center w-full rounded-lg bg-primary-50 px-4 py-3 hover:translate-y-[-2px] transition-transform"
+          >
+            <Image src={item.icon} alt={item.name} width={24} height={24} />
+            <span className="flex-grow text-center text-sm font-medium">
+              {item.name}
+            </span>
+          </a>
+        ))}
+      </div>
+
+      {/* Divider */}
+      <div className="relative text-center mb-6">
+        <span className="relative z-10 inline-block px-4 text-sm font-medium bg-white">
+          OR
+        </span>
+        <div className="absolute left-0 w-full top-1/2 transform -translate-y-1/2 border border-neutral-200"></div>
+      </div>
+
+      {/* Email/password login form */}
+      <form className="space-y-4" onSubmit={handleSubmit}>
+        <Input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        {error && <div className="text-red-500 text-sm">{error}</div>}
+        <ButtonPrimary type="submit" disabled={loading}>
+          {loading ? "Loading..." : "Continue"}
+        </ButtonPrimary>
+      </form>
+
+      {/* Footer links */}
+      <div className="mt-4 text-center text-sm text-neutral-700">
+        Nouveau sur le site?{" "}
+        <Link href="/signup" className="font-semibold underline">
+          Créer un compte
+        </Link>
+      </div>
+      <div className="mt-2 text-center text-sm">
+        <Link href={"/forgot-password" as Route} className="underline font-medium">
+  Mot de passe oublié ?
+</Link>0.32.+6
       </div>
     </div>
   );
-};
-
-export default PageLogin;
+}

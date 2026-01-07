@@ -9,56 +9,59 @@ const PageAddListing8: FC<PageAddListing8Props> = () => {
   return (
     <>
       <div>
-        <h2 className="text-2xl font-semibold">Price your space</h2>
+        <h2 className="text-2xl font-semibold">Tarifiez votre logement</h2>
         <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-          {` The host's revenue is directly dependent on the setting of rates and
-            regulations on the number of guests, the number of nights, and the
-            cancellation policy.`}
+          {`Les revenus de l'hôte dépendent directement de la fixation des tarifs
+            et des règles concernant le nombre de clients, le nombre de nuits
+            et la politique d'annulation.`}
         </span>
       </div>
+
       <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-      {/* FORM */}
+
+      {/* FORMULAIRE */}
       <div className="space-y-8">
         {/* ITEM */}
-        <FormItem label="Currency">
+        <FormItem label="Devise">
           <Select>
             <option value="USD">USD</option>
-            <option value="VND">VND</option>
-            <option value="EURRO">EURRO</option>
+            <option value="XOF">XOF (Franc CFA)</option>
+            <option value="EUR">EUR</option>
           </Select>
         </FormItem>
-        <FormItem label="Base price  (Monday -Thuday)">
+
+        <FormItem label="Prix de base (Lundi - Jeudi)">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <span className="text-gray-500">$</span>
             </div>
-            <Input className="!pl-8 !pr-10" placeholder="0.00" />
+            <Input className="!pl-8 !pr-10" placeholder="0,00" />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
               <span className="text-gray-500">USD</span>
             </div>
           </div>
         </FormItem>
-        {/* ----- */}
-        <FormItem label="Base price  (Friday-Sunday)">
+
+        <FormItem label="Prix de base (Vendredi - Dimanche)">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <span className="text-gray-500">$</span>
             </div>
-            <Input className="!pl-8 !pr-10" placeholder="0.00" />
+            <Input className="!pl-8 !pr-10" placeholder="0,00" />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
               <span className="text-gray-500">USD</span>
             </div>
           </div>
         </FormItem>
-        {/* ----- */}
-        <FormItem label="Long term price (Monthly discount) ">
+
+        <FormItem label="Prix long terme (Remise mensuelle)">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <span className="text-gray-500">%</span>
             </div>
-            <Input className="!pl-8 !pr-10" placeholder="0.00" />
+            <Input className="!pl-8 !pr-10" placeholder="0,00" />
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-              <span className="text-gray-500">every month</span>
+              <span className="text-gray-500">par mois</span>
             </div>
           </div>
         </FormItem>

@@ -1,13 +1,14 @@
 "use client";
 
 import {
-  HeartIcon,
+  HomeIcon,
   MagnifyingGlassIcon,
-  UserCircleIcon,
+  PlusCircleIcon,
+  UserGroupIcon,
+  ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
 import React, { useEffect, useRef } from "react";
 import { PathName } from "@/routers/types";
-import MenuBar from "@/shared/MenuBar";
 import isInViewport from "@/utils/isInViewport";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,25 +25,11 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
-  {
-    name: "Explore",
-    link: "/",
-    icon: MagnifyingGlassIcon,
-  },
-  {
-    name: "Wishlists",
-    link: "/account-savelists",
-    icon: HeartIcon,
-  },
-  {
-    name: "Log in",
-    link: "/account",
-    icon: UserCircleIcon,
-  },
-  {
-    name: "Menu",
-    icon: MenuBar,
-  },
+  { name: "Accueil", link: "/", icon: HomeIcon },
+  { name: "Biens", link: "/listings", icon: MagnifyingGlassIcon },
+  { name: "Ajouter", link: "#", icon: PlusCircleIcon }, // disabled / bientôt
+  { name: "Agents", link: "/agents", icon: UserGroupIcon },
+  { name: "WhatsApp", link: "https://wa.me/2250712129409", icon: ChatBubbleLeftRightIcon },
 ];
 
 const FooterNav = () => {
@@ -103,7 +90,8 @@ const FooterNav = () => {
         href={item.link}
         className={`flex flex-col items-center justify-between text-neutral-500 dark:text-neutral-300/90 ${
           isActive ? "text-neutral-900 dark:text-neutral-100" : ""
-        }`}
+        } ${item.link === "#" ? "opacity-60 pointer-events-none" : ""}`}
+        target={item.link.startsWith("http") ? "_blank" : undefined}
       >
         <item.icon className={`w-6 h-6 ${isActive ? "text-red-600" : ""}`} />
         <span

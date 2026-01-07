@@ -10,24 +10,24 @@ import avatar6 from "@/images/avatars/Image-6.png";
 
 const notifications = [
   {
-    name: "Eden Tuan",
-    description: "Measure actions your users take",
-    time: "3 minutes ago",
-    href: "##",
+    name: "Kouadio Yves",
+    description: "Mesurez les actions de vos utilisateurs",
+    time: "il y a 3 minutes",
+    href: "/author",
     avatar: avatar4,
   },
   {
-    name: "Leo Messi",
-    description: "Create your own targeted content",
-    time: "1 minute ago",
-    href: "##",
+    name: "Touré Aminata",
+    description: "Créez votre propre contenu ciblé",
+    time: "il y a 1 minute",
+    href: "/add-listing",
     avatar: avatar5,
   },
   {
-    name: "Leo Kante",
-    description: "Keep track of your growth",
-    time: "3 minutes ago",
-    href: "##",
+    name: "Konaté Mamadou",
+    description: "Suivez votre croissance",
+    time: "il y a 3 minutes",
+    href: "/about",
     avatar: avatar6,
   },
 ];

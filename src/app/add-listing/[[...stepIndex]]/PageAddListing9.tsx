@@ -18,26 +18,29 @@ const PageAddListing9: FC<PageAddListing9Props> = () => {
   return (
     <>
       <div>
-        <h2 className="text-2xl font-semibold">How long can guests stay?</h2>
+        <h2 className="text-2xl font-semibold">Durée du séjour des clients</h2>
         <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-          {` Shorter trips can mean more reservations, but you'll turn over your
-          space more often.`}
+          {`Des séjours plus courts peuvent générer plus de réservations, mais
+            vous aurez à préparer votre logement plus souvent.`}
         </span>
       </div>
+
       <div className="w-14 border-b border-neutral-200 dark:border-neutral-700"></div>
-      {/* FORM */}
+
+      {/* FORMULAIRE */}
       <div className="space-y-7">
         {/* ITEM */}
-        <NcInputNumber label="Nights min" defaultValue={1} />
-        <NcInputNumber label="Nights max" defaultValue={99} />
+        <NcInputNumber label="Nombre minimum de nuits" defaultValue={1} />
+        <NcInputNumber label="Nombre maximum de nuits" defaultValue={99} />
       </div>
 
-      {/*  */}
+      {/* DISPONIBILITÉ */}
       <div>
-        <h2 className="text-2xl font-semibold">Set your availability</h2>
+        <h2 className="text-2xl font-semibold">Définissez vos disponibilités</h2>
         <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-          Editing your calendar is easy—just select a date to block or unblock
-          it. You can always make changes after you publish.
+          Modifier votre calendrier est facile : sélectionnez simplement une date
+          pour la bloquer ou la débloquer. Vous pouvez toujours faire des
+          modifications après la publication.
         </span>
       </div>
 
@@ -46,9 +49,8 @@ const PageAddListing9: FC<PageAddListing9Props> = () => {
           onChange={(date) => {
             let newDates = [];
 
-            if (!date) {
-              return;
-            }
+            if (!date) return;
+
             const newTime = date.getTime();
             if (dates.includes(newTime)) {
               newDates = dates.filter((item) => item !== newTime);
@@ -57,7 +59,6 @@ const PageAddListing9: FC<PageAddListing9Props> = () => {
             }
             setDates(newDates);
           }}
-          // selected={startDate}
           monthsShown={2}
           showPopperArrow={false}
           excludeDates={dates.filter(Boolean).map((item) => new Date(item))}

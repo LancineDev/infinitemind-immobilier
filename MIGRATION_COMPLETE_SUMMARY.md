@@ -76,3 +76,5 @@ La navigation dans `src/data/navigation.ts` contient encore:
 **Date:** [Session actuelle]
 **Status:** Tabs et labels mis à jour avec succès
 
+
+

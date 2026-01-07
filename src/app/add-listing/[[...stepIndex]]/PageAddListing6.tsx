@@ -8,16 +8,16 @@ const PageAddListing6: FC<PageAddListing6Props> = () => {
     <>
       <div>
         <h2 className="text-2xl font-semibold">
-          Your place description for client
+          Description de votre logement pour les clients
         </h2>
         <span className="block mt-2 text-neutral-500 dark:text-neutral-400">
-          Mention the best features of your accommodation, any special amenities
-          like fast Wi-Fi or parking, as well as things you like about the
-          neighborhood.
+          Mentionnez les meilleures caractéristiques de votre logement, tout
+          équipement spécial comme le Wi-Fi rapide ou le parking, ainsi que ce
+          que vous aimez dans le quartier.
         </span>
       </div>
 
-      <Textarea placeholder="..." rows={14} />
+      <Textarea placeholder="Écrivez ici la description de votre logement..." rows={14} />
     </>
   );
 };

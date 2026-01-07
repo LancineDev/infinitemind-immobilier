@@ -96,3 +96,5 @@
 **Date:** [Session actuelle]
 **Status:** Migration booking/paiement complétée ✅
 
+
+

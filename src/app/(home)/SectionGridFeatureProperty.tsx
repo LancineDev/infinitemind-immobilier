@@ -23,7 +23,7 @@ const SectionGridFeatureProperty: FC<SectionGridFeaturePropertyProps> = ({
   heading = "Featured Properties",
   subHeading = "Discover the best properties we have to offer",
   headingIsCenter,
-  tabs = ["New York", "Tokyo", "Paris", "London"],
+  tabs = ["Abidjan", "Yamoussoukro", "Bouaké", "San-Pédro"],
 }) => {
   const renderCard = (property: PropertyDataType, index: number) => {
     return <PropertyCardH key={index} className="h-full" data={property} />;
@@ -32,7 +32,7 @@ const SectionGridFeatureProperty: FC<SectionGridFeaturePropertyProps> = ({
   return (
     <div className="nc-SectionGridFeatureProperty relative">
       <HeaderFilter
-        tabActive={"New York"}
+        tabActive={"Abidjan"}
         subHeading={subHeading}
         tabs={tabs}
         heading={heading}

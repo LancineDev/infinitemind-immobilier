@@ -65,12 +65,12 @@ const demoChildMenus: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/",
-    name: "Réservation en ligne",
+    name: "Réservations",
   },
   {
     id: ncNanoId(),
     href: "/home-2",
-    name: "Immobilier",
+    name: "Propriétés",
     isNew: true,
   },
   {
@@ -82,8 +82,6 @@ const demoChildMenus: NavItemType[] = [
 ];
 
 const otherPageChildMenus: NavItemType[] = [
-  { id: ncNanoId(), href: "/blog", name: "Page blog" },
-  { id: ncNanoId(), href: "/blog/single" as Route, name: "Article blog" },
   { id: ncNanoId(), href: "/about", name: "À propos" },
   { id: ncNanoId(), href: "/contact", name: "Nous contacter" },
   { id: ncNanoId(), href: "/login", name: "Connexion" },
@@ -130,7 +128,7 @@ const templatesChildrenMenus: NavItemType[] = [
       {
         id: ncNanoId(),
         href: "/add-listing/7" as Route,
-        name: "Ajouter une annonce 7",
+        name: "Ajouter une annonce7",
       },
       {
         id: ncNanoId(),
@@ -150,14 +148,7 @@ const templatesChildrenMenus: NavItemType[] = [
     ],
   },
   //
-  { id: ncNanoId(), href: "/author", name: "Page auteur" },
-  { id: ncNanoId(), href: "/account", name: "Page compte" },
-  //
-  {
-    id: ncNanoId(),
-    href: "/subscription",
-    name: "Abonnement",
-  },
+  { id: ncNanoId(), href: "/account", name: "Mon compte", },
 ];
 
 export const NAVIGATION_DEMO: NavItemType[] = [
@@ -165,74 +156,39 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     id: ncNanoId(),
     href: "/",
     name: "Accueil",
-    type: "dropdown",
-    children: demoChildMenus,
-    isNew: true,
   },
   {
     id: ncNanoId(),
-    href: "/",
-    name: "Five columns",
-    type: "megaMenu",
-    megaMenu: megaMenuDemo,
-  },
-  {
-    id: ncNanoId(),
-    href: "/listing-stay",
-    name: "Pages de listes",
+    href: "/listing-real-estate",
+    name: "Propriétés",
     type: "dropdown",
     children: [
       {
         id: ncNanoId(),
-        href: "/listing-stay",
-        name: "Listes de propriétés",
-        type: "dropdown",
-        children: [
-          { id: ncNanoId(), href: "/listing-stay", name: "Page propriétés" },
-          {
-            id: ncNanoId(),
-            href: "/listing-stay-map",
-            name: "Page propriétés (carte)",
-          },
-          { id: ncNanoId(), href: "/listing-stay-detail", name: "Détail propriété" },
-        ],
+        href: "/listing-real-estate",
+        name: "Toutes les propriétés",
       },
-
-      //
       {
         id: ncNanoId(),
-        href: "/listing-real-estate",
-        name: "Listes immobilières",
-        type: "dropdown",
-        children: [
-          {
-            id: ncNanoId(),
-            href: "/listing-real-estate",
-            name: "Listes immobilières",
-          },
-          {
-            id: ncNanoId(),
-            href: "/listing-real-estate-map",
-            name: "Cartes immobilières",
-          },
-        ],
+        href: "/listing-real-estate-map",
+        name: "Carte des propriétés",
       },
     ],
   },
   {
     id: ncNanoId(),
-    href: "/author",
-    name: "Modèles",
-    type: "dropdown",
-    children: templatesChildrenMenus,
+    href: "/add-listing/1",
+    name: "Déposer une annonce",
   },
-
   {
     id: ncNanoId(),
-    href: "/blog",
-    name: "Autres pages",
-    type: "dropdown",
-    children: otherPageChildMenus,
+    href: "/about",
+    name: "À propos",
+  },
+  {
+    id: ncNanoId(),
+    href: "/contact",
+    name: "Contact",
   },
 ];
 
@@ -250,7 +206,7 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/listing-stay",
-    name: "Pages de listes",
+    name: "Listes de propriétés",
     children: [
       { id: ncNanoId(), href: "/listing-stay", name: "Listes de propriétés" },
       {
@@ -264,7 +220,7 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/listing-real-estate",
-    name: "Pages de listes",
+    name: "Listes de propriétés",
     children: [
       {
         id: ncNanoId(),
@@ -274,7 +230,7 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
       {
         id: ncNanoId(),
         href: "/listing-real-estate-map",
-        name: "Immobilier (carte)",
+        name: "Propriétés (carte)",
       },
     ],
   },
@@ -282,18 +238,9 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
   //
   {
     id: ncNanoId(),
-    href: "/author",
+    href: "/add-listing/1",
     name: "Modèles",
     type: "dropdown",
     children: templatesChildrenMenus,
-  },
-
-  //
-  {
-    id: ncNanoId(),
-    href: "/blog",
-    name: "Autres pages",
-    type: "dropdown",
-    children: otherPageChildMenus,
   },
 ];
