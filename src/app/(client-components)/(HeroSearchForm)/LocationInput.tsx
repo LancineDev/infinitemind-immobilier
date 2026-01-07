@@ -86,7 +86,7 @@ const LocationInput: FC<LocationInputProps> = ({
               className="flex px-4 sm:px-8 items-center space-x-3 sm:space-x-4 py-4 hover:bg-neutral-100 dark:hover:bg-neutral-700 cursor-pointer"
             >
               <span className="block text-neutral-400">
-                <ClockIcon className="h-4 sm:h-6 sm:w-6" />
+                <MapPinIcon className="h-4 sm:h-6 sm:w-6" />
               </span>
               <span className="block font-medium text-neutral-700 dark:text-neutral-200">
                 {item}
