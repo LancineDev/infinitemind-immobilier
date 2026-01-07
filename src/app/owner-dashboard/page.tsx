@@ -1,4 +1,4 @@
-+"use client";
+"use client";
 import React, { useEffect, useState } from "react";
 import { auth } from "@/lib/firebase";
 import { SHEETS_CSV_URL, SHEETS_ENDPOINT } from "@/lib/config";
