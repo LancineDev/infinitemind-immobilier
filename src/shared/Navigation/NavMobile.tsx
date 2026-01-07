@@ -106,10 +106,20 @@ const NavMobile: React.FC<NavMobileProps> = ({
   return (
     <div className="overflow-y-auto w-full h-screen py-2 transition transform shadow-lg ring-1 dark:ring-neutral-700 bg-white dark:bg-neutral-900 divide-y-2 divide-neutral-100 dark:divide-neutral-800">
       <div className="py-6 px-5">
-        <Logo />
+        <div className="flex justify-between items-center">
+          <Logo />
+          <button
+            className="p-2 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg"
+            onClick={onClickClose}
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
         <div className="flex flex-col mt-5 text-neutral-700 dark:text-neutral-300 text-sm">
           <span>
-            Discover the most outstanding articles on all topics of life. Write
+            Discover most outstanding articles on all topics of life. Write
             your stories and share them
           </span>
 
@@ -120,9 +130,6 @@ const NavMobile: React.FC<NavMobileProps> = ({
             </span>
           </div>
         </div>
-        <span className="absolute right-2 top-2 p-1">
-          <ButtonClose onClick={onClickClose} />
-        </span>
       </div>
       <ul className="flex flex-col py-6 px-2 space-y-1">
         {data.map(_renderItem)}
