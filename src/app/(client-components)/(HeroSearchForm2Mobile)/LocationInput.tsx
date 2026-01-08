@@ -14,8 +14,8 @@ interface Props {
 const LocationInput: FC<Props> = ({
   onChange = () => {},
   className = "",
-  defaultValue = "United States",
-  headingText = "Where to?",
+  defaultValue = "Côte d'Ivoire",
+  headingText = "Où allez-vous ?",
 }) => {
   const [value, setValue] = useState("");
   const containerRef = useRef(null);
@@ -72,7 +72,7 @@ const LocationInput: FC<Props> = ({
         <div className="relative mt-5">
           <input
             className={`block w-full bg-transparent border px-4 py-3 pr-12 border-neutral-900 dark:border-neutral-200 rounded-xl focus:ring-0 focus:outline-none text-base leading-none placeholder-neutral-500 dark:placeholder-neutral-300 truncate font-bold placeholder:truncate`}
-            placeholder={"Search destinations"}
+            placeholder={"Rechercher des destinations"}
             value={value}
             onChange={(e) => setValue(e.currentTarget.value)}
             ref={inputRef}
@@ -84,23 +84,28 @@ const LocationInput: FC<Props> = ({
         <div className="mt-7">
           {value
             ? renderSearchValues({
-                heading: "Locations",
+                heading: "Localisations",
                 items: [
-                  "Afghanistan",
-                  "Albania",
-                  "Algeria",
-                  "American Samao",
-                  "Andorra",
+                  "Abidjan, Côte d'Ivoire",
+                  "Yamoussoukro, Côte d'Ivoire",
+                  "Bouaké, Côte d'Ivoire",
+                  "San-Pédro, Côte d'Ivoire",
+                  "Daloa, Côte d'Ivoire",
                 ],
               })
             : renderSearchValues({
-                heading: "Popular destinations",
+                heading: "Destinations populaires",
                 items: [
-                  "Australia",
-                  "Canada",
-                  "Germany",
-                  "United Kingdom",
-                  "United Arab Emirates",
+                  "Abidjan, Côte d'Ivoire",
+                  "Yamoussoukro, Côte d'Ivoire",
+                  "Bouaké, Côte d'Ivoire",
+                  "San-Pédro, Côte d'Ivoire",
+                  "Daloa, Côte d'Ivoire",
+                  "Gagnoa, Côte d'Ivoire",
+                  "Man, Côte d'Ivoire",
+                  "Sassandra, Côte d'Ivoire",
+                  "Divo, Côte d'Ivoire",
+                  "Grand-Bassam, Côte d'Ivoire"
                 ],
               })}
         </div>
