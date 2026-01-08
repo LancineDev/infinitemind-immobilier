@@ -88,9 +88,9 @@ const Footer: React.FC = () => {
               {TOP_AGENTS.slice(0, 5).map(renderAgent)}
             </div>
 
-            <div className="mt-4 flex space-x-3">
-              <a href="/agents" className="px-4 py-2 border rounded-md text-sm">Voir plus</a>
-              <a href="/agents/signup" className="px-4 py-2 bg-green-600 text-white rounded-md text-sm">Devenir agent</a>
+            <div className="mt-4 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+              <a href="/agents" className="inline-flex items-center justify-center px-4 py-2 border rounded-md text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">Voir plus</a>
+              <a href="/agents/signup" className="inline-flex items-center justify-center px-4 py-2 bg-green-600 text-white rounded-md text-sm hover:bg-green-700 transition-colors">Devenir agent</a>
             </div>
           </div>
 
