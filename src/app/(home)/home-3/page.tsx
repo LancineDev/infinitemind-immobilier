@@ -11,7 +11,7 @@ import SectionGridFeaturePlaces from "@/components/SectionGridFeaturePlaces";
 const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listing-real-estate",
+    href: "/listings?type=Maison",
     name: "Maisons de luxe",
     taxonomy: "category",
     count: 1245,
@@ -20,7 +20,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "2",
-    href: "/listing-real-estate",
+    href: "/listings?type=Appartement",
     name: "Appartements modernes",
     taxonomy: "category",
     count: 856,
@@ -29,7 +29,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "3",
-    href: "/listing-real-estate",
+    href: "/listings?type=Villa",
     name: "Villas prestige",
     taxonomy: "category",
     count: 623,
@@ -38,7 +38,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "4",
-    href: "/listing-real-estate",
+    href: "/listings?type=Terrain",
     name: "Terrains à bâtir",
     taxonomy: "category",
     count: 412,
@@ -47,7 +47,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "5",
-    href: "/listing-real-estate",
+    href: "/listings?type=Local commercial",
     name: "Propriétés commerciales",
     taxonomy: "category",
     count: 389,

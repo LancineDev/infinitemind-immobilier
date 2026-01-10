@@ -10,62 +10,65 @@ import Checkbox from "@/shared/Checkbox";
 import Slider from "rc-slider";
 import convertNumbThousand from "@/utils/convertNumbThousand";
 
-// DEMO DATA
+// DEMO DATA - Types de propriétés immobilières
 const typeOfPaces = [
   {
-    name: "Entire place",
-    description: "Have a place to yourself",
+    name: "Maison",
+    description: "Propriété familiale avec jardin",
   },
   {
-    name: "Private room",
-    description: "Have your own room and share some common spaces",
+    name: "Appartement",
+    description: "Logement moderne en immeuble",
   },
   {
-    name: "Hotel room",
-    description:
-      "Have a private or shared room in a boutique hotel, hostel, and more",
+    name: "Villa",
+    description: "Résidence de luxe avec piscine",
   },
   {
-    name: "Shared room",
-    description: "Stay in a shared space, like a common room",
+    name: "Terrain",
+    description: "Terrain à bâtir pour construction",
+  },
+  {
+    name: "Local commercial",
+    description: "Espace commercial pour entreprise",
   },
 ];
 
 const moreFilter1 = [
-  { name: "Kitchen", defaultChecked: true },
-  { name: "Air conditioning", defaultChecked: true },
-  { name: "Heating" },
-  { name: "Dryer" },
-  { name: "Washer" },
+  { name: "Cuisine", defaultChecked: true },
+  { name: "Climatisation", defaultChecked: true },
+  { name: "Chauffage" },
+  { name: "Sèche-linge" },
+  { name: "Machine à laver" },
   { name: "Wifi" },
-  { name: "Indoor fireplace" },
-  { name: "Breakfast" },
-  { name: "Hair dryer" },
-  { name: " Dedicated workspace" },
+  { name: "Cheminée intérieure" },
+  { name: "Petit-déjeuner" },
+  { name: "Sèche-cheveux" },
+  { name: "Espace de travail dédié" },
 ];
 
 const moreFilter2 = [
-  { name: " Free parking on premise" },
-  { name: "Hot tub" },
-  { name: "Gym" },
-  { name: " Pool" },
-  { name: " EV charger" },
+  { name: "Parking gratuit sur place" },
+  { name: "Bain à remous" },
+  { name: "Salle de sport" },
+  { name: "Piscine" },
+  { name: "Borne de recharge VE" },
 ];
 
 const moreFilter3 = [
-  { name: " House" },
-  { name: "Bed and breakfast" },
-  { name: "Apartment", defaultChecked: true },
-  { name: " Boutique hotel" },
-  { name: " Bungalow" },
-  { name: " Chalet", defaultChecked: true },
-  { name: " Condominium", defaultChecked: true },
-  { name: " Cottage" },
-  { name: " Guest suite" },
-  { name: " Guesthouse" },
+  { name: "Maison" },
+  { name: "Chambre d'hôtes" },
+  { name: "Appartement", defaultChecked: true },
+  { name: "Hôtel boutique" },
+  { name: "Bungalow" },
+  { name: "Chalet", defaultChecked: true },
+  { name: "Condominium", defaultChecked: true },
+  { name: "Gîte" },
+  { name: "Suite pour invités" },
+  { name: "Maison d'hôtes" },
 ];
 
-const moreFilter4 = [{ name: " Pets allowed" }, { name: "Smoking allowed" }];
+const moreFilter4 = [{ name: "Animaux autorisés" }, { name: "Fumeurs autorisés" }];
 
 const TabFilters = () => {
   const [isOpenMoreFilter, setisOpenMoreFilter] = useState(false);
