@@ -44,18 +44,15 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
       selectedCity.toLowerCase().includes(property.address.toLowerCase());
     
     // Filtrage par type de propriété - correspondance exacte avec listingCategory.name
-    const matchesType = !selectedType || 
-      property.listingCategory?.name.toLowerCase() === selectedType.toLowerCase();
+    const propertyType = property.listingCategory?.name?.toLowerCase() || '';
+    const selectedTypeLower = selectedType?.toLowerCase() || '';
+    const matchesType = !selectedType || propertyType === selectedTypeLower;
     
     const matchesPrice = !priceRange || true; // Simplifié pour l'instant
     
-    // Debug: Afficher chaque propriété filtrée
-    if (selectedType && matchesType) {
-      console.log(`Propriété qui match "${selectedType}":`, {
-        title: property.title,
-        category: property.listingCategory?.name,
-        matches: matchesType
-      });
+    // Debug: Afficher TOUTES les propriétés avec leurs types
+    if (selectedType) {
+      console.log(`Propriété: "${property.title}" | Type: "${propertyType}" | Selected: "${selectedTypeLower}" | Match: ${matchesType}`);
     }
     
     return matchesSearch && matchesCity && matchesType && matchesPrice;
