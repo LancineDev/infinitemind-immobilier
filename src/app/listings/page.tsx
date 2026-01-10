@@ -91,14 +91,16 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
   // Types de propriétés disponibles dans les données (basé sur listingCategory.name)
   // Debug: Afficher les types réels disponibles
   const availableTypes = Array.from(new Set(DEMO_PROPERTY_LISTINGS.map(p => p.listingCategory?.name).filter(Boolean)));
+  console.log("=== ANALYSE COMPLÈTE DES DONNÉES ===");
   console.log("Types disponibles:", availableTypes);
   console.log("Type sélectionné:", selectedType);
   
   // Afficher quelques exemples pour vérifier
-  const sampleProperties = DEMO_PROPERTY_LISTINGS.slice(0, 3);
+  const sampleProperties = DEMO_PROPERTY_LISTINGS.slice(0, 5);
   console.log("Exemples de propriétés:", sampleProperties.map(p => ({
     title: p.title,
     category: p.listingCategory?.name,
+    categoryObj: p.listingCategory,
     bedrooms: p.bedrooms
   })));
   
