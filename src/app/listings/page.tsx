@@ -49,9 +49,7 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
     const matchesPrice = !priceRange || true; // Simplifié pour l'instant
     
     // Debug: Afficher TOUTES les propriétés avec leurs types
-    if (selectedType) {
-      console.log(`Propriété: "${property.title}" | Type: "${propertyType}" | Selected: "${selectedTypeLower}" | Match: ${matchesType}`);
-    }
+    console.log(`Propriété: "${property.title}" | Type: "${propertyType}" | Selected: "${selectedTypeLower}" | Match: ${matchesType} | CategoryID: ${property.listingCategory?.id}`);
     
     return matchesSearch && matchesCity && matchesType && matchesPrice;
   });
