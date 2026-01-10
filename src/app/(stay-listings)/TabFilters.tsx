@@ -9,6 +9,7 @@ import ButtonClose from "@/shared/ButtonClose";
 import Checkbox from "@/shared/Checkbox";
 import Slider from "rc-slider";
 import convertNumbThousand from "@/utils/convertNumbThousand";
+import Link from "next/link";
 
 // DEMO DATA - Types de propriétés immobilières
 const typeOfPaces = [
@@ -127,13 +128,23 @@ const TabFilters = () => {
                 <div className="overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700">
                   <div className="relative flex flex-col px-5 py-6 space-y-5">
                     {typeOfPaces.map((item) => (
-                      <div key={item.name} className="">
-                        <Checkbox
-                          name={item.name}
-                          label={item.name}
-                          subLabel={item.description}
-                        />
-                      </div>
+                      <Link
+                        key={item.name}
+                        href={`/listing-stay-map?type=${item.name}`}
+                        className="flex items-center justify-between p-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="w-5 h-5 rounded border-2 border-primary-500 bg-primary-500 flex items-center justify-center">
+                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <div>
+                            <span className="font-medium text-neutral-900 dark:text-white">{item.name}</span>
+                            <span className="block text-sm text-neutral-500 dark:text-neutral-400">{item.description}</span>
+                          </div>
+                        </div>
+                      </Link>
                     ))}
                   </div>
                   <div className="p-5 bg-neutral-50 dark:bg-neutral-900 dark:border-t dark:border-neutral-800 flex items-center justify-between">
