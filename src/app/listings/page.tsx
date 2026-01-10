@@ -42,10 +42,9 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
       property.address.toLowerCase().includes(selectedCity.toLowerCase()) ||
       selectedCity.toLowerCase().includes(property.address.toLowerCase());
     
-    // Filtrage par type de propriété - utilisation de listingCategory.name qui est plus précis
+    // Filtrage par type de propriété - correspondance exacte avec listingCategory.name
     const matchesType = !selectedType || 
-      property.listingCategory?.name.toLowerCase().includes(selectedType.toLowerCase()) ||
-      selectedType.toLowerCase().includes(property.listingCategory?.name.toLowerCase() || "");
+      property.listingCategory?.name.toLowerCase() === selectedType.toLowerCase();
     
     const matchesPrice = !priceRange || true; // Simplifié pour l'instant
     
