@@ -38,8 +38,18 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
                          property.address.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCity = !selectedCity || property.address.toLowerCase().includes(selectedCity.toLowerCase());
     
-    // Filtrage par type de propriété exact
-    const matchesType = !selectedType || property.listingCategory?.name === selectedType;
+    // Filtrage par type de propriété via propertyType et listingCategory
+    const matchesType = !selectedType || 
+      (selectedType === "Villa" && property.propertyType === "villa") ||
+      (selectedType === "Appartement" && property.propertyType === "apartment") ||
+      (selectedType === "Maison" && property.propertyType === "house") ||
+      (selectedType === "Terrain" && property.propertyType === "land") ||
+      (selectedType === "Local commercial" && property.propertyType === "commercial") ||
+      (selectedType === "Villa" && property.listingCategory?.name === "Villa") ||
+      (selectedType === "Appartement" && property.listingCategory?.name === "Appartement") ||
+      (selectedType === "Maison" && property.listingCategory?.name === "Maison") ||
+      (selectedType === "Terrain" && property.listingCategory?.name === "Terrain") ||
+      (selectedType === "Local commercial" && property.listingCategory?.name === "Local commercial");
     
     const matchesPrice = !priceRange || true; // Simplifié pour l'instant
     
