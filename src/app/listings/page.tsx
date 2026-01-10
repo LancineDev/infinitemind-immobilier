@@ -56,9 +56,13 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
     return matchesSearch && matchesCity && matchesType && matchesPrice;
   });
 
-  // Villes ivoiriennes
+  // Villes ivoiriennes et communes d'Abidjan
   const ivorianCities = [
-    "Abidjan", "Yamoussoukro", "Bouaké", "San-Pédro", 
+    // Communes d'Abidjan
+    "Cocody", "Yopougon", "Marcory", "Treichville", 
+    "Koumassi", "Plateau", "Abobo", "Port-Bouët", "Attécoubé",
+    // Autres villes
+    "Yamoussoukro", "Bouaké", "San-Pédro", "Korhogo", 
     "Daloa", "Gagnoa", "Man", "Sassandra", "Divo", "Grand-Bassam"
   ];
 

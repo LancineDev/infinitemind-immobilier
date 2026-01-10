@@ -65,20 +65,26 @@ const LocationInput: FC<LocationInputProps> = ({
     return (
       <>
         <h3 className="block mt-2 sm:mt-0 px-4 sm:px-8 font-semibold text-base sm:text-lg text-neutral-800 dark:text-neutral-100">
-          Destinations populaires
+          Communes d'Abidjan et villes
         </h3>
         <div className="mt-2">
           {[
-            "Abidjan, Côte d'Ivoire",
+            // Communes d'Abidjan
+            "Cocody, Abidjan",
+            "Yopougon, Abidjan", 
+            "Marcory, Abidjan",
+            "Treichville, Abidjan",
+            "Koumassi, Abidjan",
+            "Plateau, Abidjan",
+            "Abobo, Abidjan",
+            "Port-Bouët, Abidjan",
+            "Attécoubé, Abidjan",
+            // Autres villes
             "Yamoussoukro, Côte d'Ivoire",
             "Bouaké, Côte d'Ivoire",
             "San-Pédro, Côte d'Ivoire",
-            "Daloa, Côte d'Ivoire",
-            "Gagnoa, Côte d'Ivoire",
-            "Man, Côte d'Ivoire",
-            "Sassandra, Côte d'Ivoire",
-            "Divo, Côte d'Ivoire",
-            "Grand-Bassam, Côte d'Ivoire"
+            "Korhogo, Côte d'Ivoire",
+            "Daloa, Côte d'Ivoire"
           ].map((item) => (
             <span
               onClick={() => handleSelectLocation(item)}
@@ -102,16 +108,22 @@ const LocationInput: FC<LocationInputProps> = ({
     return (
       <>
         {[
-          "Abidjan, Côte d'Ivoire",
+          // Communes d'Abidjan
+          "Cocody, Abidjan",
+          "Yopougon, Abidjan", 
+          "Marcory, Abidjan",
+          "Treichville, Abidjan",
+          "Koumassi, Abidjan",
+          "Plateau, Abidjan",
+          "Abobo, Abidjan",
+          "Port-Bouët, Abidjan",
+          "Attécoubé, Abidjan",
+          // Autres villes
           "Yamoussoukro, Côte d'Ivoire",
           "Bouaké, Côte d'Ivoire",
           "San-Pédro, Côte d'Ivoire",
-          "Daloa, Côte d'Ivoire",
-          "Gagnoa, Côte d'Ivoire",
-          "Man, Côte d'Ivoire",
-          "Sassandra, Côte d'Ivoire",
-          "Divo, Côte d'Ivoire",
-          "Grand-Bassam, Côte d'Ivoire"
+          "Korhogo, Côte d'Ivoire",
+          "Daloa, Côte d'Ivoire"
         ].map((item) => (
           <span
             onClick={() => handleSelectLocation(item)}

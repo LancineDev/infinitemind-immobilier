@@ -84,22 +84,44 @@ const LocationInput: FC<Props> = ({
         <div className="mt-7">
           {value
             ? renderSearchValues({
-                heading: "Localisations",
+                heading: "Communes d'Abidjan et villes",
                 items: [
-                  "Abidjan, Côte d'Ivoire",
+                  // Communes d'Abidjan
+                  "Cocody, Abidjan",
+                  "Yopougon, Abidjan", 
+                  "Marcory, Abidjan",
+                  "Treichville, Abidjan",
+                  "Koumassi, Abidjan",
+                  "Plateau, Abidjan",
+                  "Abobo, Abidjan",
+                  "Port-Bouët, Abidjan",
+                  "Attécoubé, Abidjan",
+                  // Autres villes
                   "Yamoussoukro, Côte d'Ivoire",
                   "Bouaké, Côte d'Ivoire",
                   "San-Pédro, Côte d'Ivoire",
-                  "Daloa, Côte d'Ivoire",
+                  "Korhogo, Côte d'Ivoire",
+                  "Daloa, Côte d'Ivoire"
                 ],
               })
             : renderSearchValues({
-                heading: "Destinations populaires",
+                heading: "Communes d'Abidjan et villes",
                 items: [
-                  "Abidjan, Côte d'Ivoire",
+                  // Communes d'Abidjan
+                  "Cocody, Abidjan",
+                  "Yopougon, Abidjan", 
+                  "Marcory, Abidjan",
+                  "Treichville, Abidjan",
+                  "Koumassi, Abidjan",
+                  "Plateau, Abidjan",
+                  "Abobo, Abidjan",
+                  "Port-Bouët, Abidjan",
+                  "Attécoubé, Abidjan",
+                  // Autres villes
                   "Yamoussoukro, Côte d'Ivoire",
                   "Bouaké, Côte d'Ivoire",
                   "San-Pédro, Côte d'Ivoire",
+                  "Korhogo, Côte d'Ivoire",
                   "Daloa, Côte d'Ivoire",
                   "Gagnoa, Côte d'Ivoire",
                   "Man, Côte d'Ivoire",
