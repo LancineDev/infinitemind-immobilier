@@ -19,7 +19,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
     taxonomy: "category",
     count: 1245,
     thumbnail:
-      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "2",
@@ -37,7 +37,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
     taxonomy: "category",
     count: 623,
     thumbnail:
-      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "4",
@@ -46,7 +46,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
     taxonomy: "category",
     count: 412,
     thumbnail:
-      "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   },
   {
     id: "5",
@@ -55,7 +55,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
     taxonomy: "category",
     count: 389,
     thumbnail:
-      "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "6",
@@ -64,7 +64,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
     taxonomy: "category",
     count: 298,
     thumbnail:
-      "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "https://images.pexels.com/photos/271644/pexels-photo-271644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "7",
@@ -80,64 +80,64 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
 const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listings?city=Cocody",
-    name: "Cocody",
+    href: "/listings?city=Abidjan",
+    name: "Abidjan",
     taxonomy: "category",
-    count: 45288,
+    count: 188288,
     thumbnail:
       "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "2",
-    href: "/listings?city=Yopougon",
-    name: "Yopougon",
+    href: "/listings?city=Yamoussoukro",
+    name: "Yamoussoukro",
     taxonomy: "category",
-    count: 38233,
+    count: 145233,
     thumbnail:
       "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "3",
-    href: "/listings?city=Marcory",
-    name: "Marcory",
+    href: "/listings?city=Bouaké",
+    name: "Bouaké",
     taxonomy: "category",
-    count: 28765,
+    count: 98765,
     thumbnail:
       "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "4",
-    href: "/listings?city=Treichville",
-    name: "Treichville",
+    href: "/listings?city=San-Pédro",
+    name: "San-Pédro",
     taxonomy: "category",
-    count: 22543,
+    count: 76543,
     thumbnail:
       "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "5",
-    href: "/listings?city=Plateau",
-    name: "Plateau",
+    href: "/listings?city=Korhogo",
+    name: "Korhogo",
     taxonomy: "category",
-    count: 15321,
+    count: 54321,
     thumbnail:
       "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   },
   {
     id: "6",
-    href: "/listings?city=Abobo",
-    name: "Abobo",
+    href: "/listings?city=Daloa",
+    name: "Daloa",
     taxonomy: "category",
-    count: 13210,
+    count: 43210,
     thumbnail:
       "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
   {
     id: "7",
-    href: "/listings?city=Yamoussoukro",
-    name: "Yamoussoukro",
+    href: "/listings?city=Man",
+    name: "Man",
     taxonomy: "category",
-    count: 145233,
+    count: 32109,
     thumbnail:
       "https://images.pexels.com/photos/271644/pexels-photo-271644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
