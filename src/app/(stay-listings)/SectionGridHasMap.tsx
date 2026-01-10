@@ -43,7 +43,25 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
       );
     }
     
-    setFilteredProperties(filtered);
+    // Trier les propriétés : le type sélectionné en premier, puis les autres
+    const sortedFiltered = [...filtered].sort((a, b) => {
+      // Si un type est sélectionné
+      if (type) {
+        // Priorité 1: Les propriétés du type sélectionné
+        const aIsSelectedType = a.listingCategory?.name.toLowerCase() === type.toLowerCase();
+        const bIsSelectedType = b.listingCategory?.name.toLowerCase() === type.toLowerCase();
+        
+        if (aIsSelectedType && !bIsSelectedType) return -1;
+        if (!aIsSelectedType && bIsSelectedType) return 1;
+      }
+      
+      // Priorité 2: Ordre alphabétique par type
+      const aType = a.listingCategory?.name || '';
+      const bType = b.listingCategory?.name || '';
+      return aType.localeCompare(bType);
+    });
+    
+    setFilteredProperties(sortedFiltered);
   }, [searchParams]);
 
   return (

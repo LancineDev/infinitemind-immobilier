@@ -60,6 +60,24 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
     return matchesSearch && matchesCity && matchesType && matchesPrice;
   });
 
+  // Trier les propriétés : le type sélectionné en premier, puis les autres
+  const sortedProperties = [...filteredProperties].sort((a, b) => {
+    // Si un type est sélectionné
+    if (selectedType) {
+      // Priorité 1: Les propriétés du type sélectionné
+      const aIsSelectedType = a.listingCategory?.name.toLowerCase() === selectedType.toLowerCase();
+      const bIsSelectedType = b.listingCategory?.name.toLowerCase() === selectedType.toLowerCase();
+      
+      if (aIsSelectedType && !bIsSelectedType) return -1;
+      if (!aIsSelectedType && bIsSelectedType) return 1;
+    }
+    
+    // Priorité 2: Ordre alphabétique par type
+    const aType = a.listingCategory?.name || '';
+    const bType = b.listingCategory?.name || '';
+    return aType.localeCompare(bType);
+  });
+
   // Villes ivoiriennes et communes d'Abidjan
   const ivorianCities = [
     // Communes d'Abidjan
@@ -199,7 +217,7 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
 
         {/* Grid des propriétés */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-          {filteredProperties.map((property) => (
+          {sortedProperties.map((property) => (
             <PropertyCardH key={property.id} data={property} />
           ))}
         </div>
