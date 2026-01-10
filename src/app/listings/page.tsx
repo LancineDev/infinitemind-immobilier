@@ -36,7 +36,11 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
   const filteredProperties = DEMO_PROPERTY_LISTINGS.filter((property) => {
     const matchesSearch = property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          property.address.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCity = !selectedCity || property.address.toLowerCase().includes(selectedCity.toLowerCase());
+    
+    // Améliorer le filtrage par ville - recherche plus flexible
+    const matchesCity = !selectedCity || 
+      property.address.toLowerCase().includes(selectedCity.toLowerCase()) ||
+      selectedCity.toLowerCase().includes(property.address.toLowerCase());
     
     // Filtrage par type de propriété via propertyType et listingCategory
     const matchesType = !selectedType || 
@@ -191,7 +195,17 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
         {filteredProperties.length === 0 && (
           <div className="text-center py-12">
             <div className="text-gray-500 dark:text-gray-400 mb-4">
-              Aucune propriété trouvée pour vos critères
+              {selectedCity ? (
+                <>
+                  Aucune propriété trouvée à <strong>{selectedCity}</strong>
+                  <br />
+                  <span className="text-sm mt-2 block">
+                    Essayez avec une autre commune d'Abidjan ou une autre ville comme Yamoussoukro, Bouaké ou San-Pédro
+                  </span>
+                </>
+              ) : (
+                "Aucune propriété trouvée pour vos critères"
+              )}
             </div>
             <button
               onClick={() => {
