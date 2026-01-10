@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, useState } from "react";
 import { DEMO_PROPERTY_LISTINGS } from "@/data/listings";
 import { PropertyDataType } from "@/data/types";
