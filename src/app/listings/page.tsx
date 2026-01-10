@@ -4,8 +4,6 @@ import React, { FC, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { DEMO_PROPERTY_LISTINGS } from "@/data/listings";
 import PropertyCardH from "@/components/PropertyCardH";
-import FilterSelects from "@/components/FilterSelects";
-import { villes, communes, typesBien, typesProprietes } from "@/data/dataCIV";
 import Pagination from "@/shared/Pagination";
 import Heading2 from "@/shared/Heading2";
 import { MagnifyingGlassIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";

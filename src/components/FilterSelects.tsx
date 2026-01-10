@@ -1,5 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { villes, communes, typesBien, getCommunesByVille } from '@/data/dataCIV';
+
+// Données locales pour les filtres
+const villes = [
+  "Abidjan",
+  "Bouaké",
+  "Yamoussoukro",
+  "San Pedro",
+  "Daloa"
+];
+
+const communes = {
+  Abidjan: ["Cocody", "Yopougon", "Marcory", "Bingerville", "Plateau"],
+  Bouaké: ["Air France", "Koko", "Dar Es Salam"],
+  Yamoussoukro: ["Habitat", "Morofé", "Kossou"],
+  SanPedro: ["Assinie", "Grand-Béréby"],
+  Daloa: ["Zone 1", "Zone 2"]
+};
+
+const typesBien = [
+  "Villa",
+  "Appartement",
+  "Studio",
+  "Maison basse",
+  "Duplex",
+  "Terrain"
+];
+
+// Fonctions utilitaires pour les filtres
+const getCommunesByVille = (ville: string): string[] => {
+  return communes[ville as keyof typeof communes] || [];
+};
+
+const getAllCommunes = (): string[] => {
+  return Object.values(communes).flat();
+};
+
+const isCommuneInVille = (commune: string, ville: string): boolean => {
+  const communesDeLaVille = getCommunesByVille(ville);
+  return communesDeLaVille.includes(commune);
+};
 
 interface FilterSelectsProps {
   onFilterChange?: (filters: {
