@@ -46,6 +46,11 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
     reviewStart,
     reviewCount,
     id,
+    address,
+    bedrooms,
+    bathrooms,
+    squareFootage,
+    listingCategory,
   } = data;
 
   const formattedPrice = formatPriceXOF(price);
@@ -90,6 +95,52 @@ const PropertyCardH: FC<PropertyCardHProps> = ({
             </div>
 
             <div className="w-14 border-b border-neutral-200/80 dark:border-neutral-700"></div>
+
+            {/* DESCRIPTION ET CARACTÉRISTIQUES */}
+            <div className="w-full space-y-3">
+              {/* Type de propriété et caractéristiques principales */}
+              <div className="flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-400">
+                {listingCategory?.name && (
+                  <span className="font-medium text-gray-700 dark:text-gray-300">
+                    {listingCategory.name}
+                  </span>
+                )}
+                {bedrooms && (
+                  <span className="flex items-center">
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-10M4 14h3a1 1 0 001-1v-10M9 14v10a1 1 0 001 1h3a1 1 0 001-1v-10" />
+                    </svg>
+                    {bedrooms} {bedrooms === 1 ? 'chambre' : 'chambres'}
+                  </span>
+                )}
+                {bathrooms && (
+                  <span className="flex items-center">
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h8m0 0l-4 9m4-9v10a1 1 0 001 1h3a1 1 0 001-1v-10M9 14h3a1 1 0 001-1v-10M4 14h3a1 1 0 001-1v-10" />
+                    </svg>
+                    {bathrooms} {bathrooms === 1 ? 'salle de bain' : 'salles de bain'}
+                  </span>
+                )}
+                {squareFootage && (
+                  <span className="flex items-center">
+                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 0v4m0-4h4M4 0v4m0-4h4M4 0v4m0-4h4" />
+                    </svg>
+                    {squareFootage} m²
+                  </span>
+                )}
+              </div>
+
+              {/* Adresse */}
+              {address && (
+                <div className="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                  <svg className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-1.414.586l-6.828-6.828a1.998 1.998 0 00-.586-1.414l4.243-4.242a1.998 1.998 0 011.414-.586l6.828 6.828a1.998 1.998 0 001.414-.586l-4.243-4.242zM8 12h.01M12 12h.01M16 12h.01" />
+                  </svg>
+                  <span className="line-clamp-2">{address}</span>
+                </div>
+              )}
+            </div>
 
             <div className="flex w-full justify-between items-end">
               <StartRating reviewCount={reviewCount} point={reviewStart} />
