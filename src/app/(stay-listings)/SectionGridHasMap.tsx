@@ -2,7 +2,7 @@
 
 import React, { FC, useEffect, useState } from "react";
 import AnyReactComponent from "@/components/AnyReactComponent/AnyReactComponent";
-import GoogleMapReact from "google-map-react";
+// import GoogleMapReact from "google-map-react"; // Désactivé pour éviter les erreurs
 import { DEMO_PROPERTY_LISTINGS } from "@/data/listings";
 import ButtonClose from "@/shared/ButtonClose";
 import Checkbox from "@/shared/Checkbox";
@@ -103,32 +103,28 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
             />
           )}
 
-          <div className="fixed xl:sticky top-0 xl:top-[88px] left-0 w-full h-full xl:h-[calc(100vh-88px)] rounded-md overflow-hidden">
-            <div className="absolute bottom-5 left-3 lg:bottom-auto lg:top-2.5 lg:left-1/2 transform lg:-translate-x-1/2 py-2 px-4 bg-white dark:bg-neutral-800 shadow-xl z-10 rounded-2xl min-w-max">
-              <Checkbox
-                className="text-xs xl:text-sm"
-                name="xx"
-                label="Rechercher en déplaçant la carte"
-              />
+          {/* MAP SECTION - Placeholder pour éviter les erreurs Google Maps */}
+          <div className="hidden xl:block flex-shrink-0 xl:w-[40%] 2xl:w-[40%]">
+            <div className="sticky top-28 h-screen bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-hidden">
+              <div className="h-full flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-neutral-500 dark:text-neutral-400 mb-4">
+                    <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-medium text-neutral-900 dark:text-white mb-2">
+                    Carte des propriétés
+                  </h3>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                    La carte interactive sera bientôt disponible
+                  </p>
+                  <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-2">
+                    {filteredProperties.length} propriété{filteredProperties.length > 1 ? 's' : ''} trouvée{filteredProperties.length > 1 ? 's' : ''}
+                  </p>
+                </div>
+              </div>
             </div>
-            <GoogleMapReact
-              defaultZoom={12}
-              defaultCenter={DEMO_STAYS[0].map}
-              bootstrapURLKeys={{
-                key: "AIzaSyAGVJfZMAKYfZ71nzL_v5i3LjTTWnCYwTY",
-              }}
-              yesIWantToUseGoogleMapApiInternals
-            >
-              {DEMO_STAYS.map((item) => (
-                <AnyReactComponent
-                  isSelected={currentHoverID === item.id}
-                  key={item.id}
-                  lat={item.map.lat}
-                  lng={item.map.lng}
-                  listing={item}
-                />
-              ))}
-            </GoogleMapReact>
           </div>
         </div>
       </div>
