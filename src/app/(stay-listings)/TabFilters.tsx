@@ -130,7 +130,7 @@ const TabFilters = () => {
                     {typeOfPaces.map((item) => (
                       <Link
                         key={item.name}
-                        href={`/listing-stay-map?type=${item.name}`}
+                        href={`/listings?type=${item.name}`}
                         className="flex items-center justify-between p-3 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
                       >
                         <div className="flex items-center space-x-3">
