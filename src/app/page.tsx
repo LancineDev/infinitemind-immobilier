@@ -14,7 +14,7 @@ import ViewAllPropertiesButton from "@/components/ViewAllPropertiesButton";
 const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listing-real-estate",
+    href: "/listings?type=Maison",
     name: "Maisons",
     taxonomy: "category",
     count: 1245,
@@ -23,7 +23,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "2",
-    href: "/listing-real-estate",
+    href: "/listings?type=Appartement",
     name: "Appartements",
     taxonomy: "category",
     count: 856,
@@ -32,7 +32,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "3",
-    href: "/listing-real-estate",
+    href: "/listings?type=Villa",
     name: "Villas",
     taxonomy: "category",
     count: 623,
@@ -41,7 +41,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "4",
-    href: "/listing-real-estate",
+    href: "/listings?type=Terrain",
     name: "Terrains",
     taxonomy: "category",
     count: 412,
@@ -50,7 +50,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "5",
-    href: "/listing-real-estate",
+    href: "/listings?type=Local commercial",
     name: "Commercial",
     taxonomy: "category",
     count: 389,
@@ -59,7 +59,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "6",
-    href: "/listing-real-estate",
+    href: "/listings?type=Maison",
     name: "Maisons de ville",
     taxonomy: "category",
     count: 298,
@@ -68,7 +68,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
   },
   {
     id: "7",
-    href: "/listing-real-estate",
+    href: "/listings?type=Appartement",
     name: "Studios",
     taxonomy: "category",
     count: 267,
@@ -80,7 +80,7 @@ const CATEGORIES_IMMOBILIERES: TaxonomyType[] = [
 const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   {
     id: "1",
-    href: "/listing-real-estate",
+    href: "/listings?city=Abidjan",
     name: "Abidjan",
     taxonomy: "category",
     count: 188288,
@@ -89,7 +89,7 @@ const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   },
   {
     id: "2",
-    href: "/listing-real-estate",
+    href: "/listings?city=Yamoussoukro",
     name: "Yamoussoukro",
     taxonomy: "category",
     count: 145233,
@@ -98,7 +98,7 @@ const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   },
   {
     id: "3",
-    href: "/listing-real-estate",
+    href: "/listings?city=Bouaké",
     name: "Bouaké",
     taxonomy: "category",
     count: 98765,
@@ -107,7 +107,7 @@ const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   },
   {
     id: "4",
-    href: "/listing-real-estate",
+    href: "/listings?city=San-Pédro",
     name: "San-Pédro",
     taxonomy: "category",
     count: 76543,
@@ -116,7 +116,7 @@ const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   },
   {
     id: "5",
-    href: "/listing-real-estate",
+    href: "/listings?city=Korhogo",
     name: "Korhogo",
     taxonomy: "category",
     count: 54321,
@@ -125,7 +125,7 @@ const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   },
   {
     id: "6",
-    href: "/listing-real-estate",
+    href: "/listings?city=Daloa",
     name: "Daloa",
     taxonomy: "category",
     count: 43210,
@@ -134,7 +134,7 @@ const VILLES_MISES_EN_AVANT: TaxonomyType[] = [
   },
   {
     id: "7",
-    href: "/listing-real-estate",
+    href: "/listings?city=Man",
     name: "Man",
     taxonomy: "category",
     count: 32109,

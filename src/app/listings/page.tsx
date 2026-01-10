@@ -1,6 +1,7 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { DEMO_PROPERTY_LISTINGS } from "@/data/listings";
 import { PropertyDataType } from "@/data/types";
 import Pagination from "@/shared/Pagination";
@@ -11,18 +12,35 @@ import { MagnifyingGlassIcon, AdjustmentsHorizontalIcon } from "@heroicons/react
 export interface ListingsPageProps {}
 
 const ListingsPage: FC<ListingsPageProps> = ({}) => {
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [priceRange, setPriceRange] = useState("");
   const [showFilters, setShowFilters] = useState(false);
 
+  // Gérer les paramètres URL
+  useEffect(() => {
+    const city = searchParams.get('city');
+    const type = searchParams.get('type');
+    
+    if (city) {
+      setSelectedCity(city);
+    }
+    if (type) {
+      setSelectedType(type);
+    }
+  }, [searchParams]);
+
   // Filtrer les propriétés
   const filteredProperties = DEMO_PROPERTY_LISTINGS.filter((property) => {
     const matchesSearch = property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          property.address.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCity = !selectedCity || property.address.includes(selectedCity);
-    const matchesType = !selectedType || property.listingCategory?.name.toLowerCase() === selectedType.toLowerCase();
+    const matchesCity = !selectedCity || property.address.toLowerCase().includes(selectedCity.toLowerCase());
+    
+    // Filtrage par type de propriété exact
+    const matchesType = !selectedType || property.listingCategory?.name === selectedType;
+    
     const matchesPrice = !priceRange || true; // Simplifié pour l'instant
     
     return matchesSearch && matchesCity && matchesType && matchesPrice;
@@ -34,9 +52,9 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
     "Daloa", "Gagnoa", "Man", "Sassandra", "Divo", "Grand-Bassam"
   ];
 
-  // Types de propriétés
+  // Types de propriétés disponibles dans les données
   const propertyTypes = [
-    "Maisons", "Appartements", "Villas", "Terrains", "Commercial", "Studios"
+    "Villa", "Appartement", "Maison", "Terrain", "Local commercial"
   ];
 
   return (
