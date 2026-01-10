@@ -20,6 +20,8 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
   const [filteredProperties, setFilteredProperties] = useState(DEMO_STAYS);
   const [currentHoverID, setCurrentHoverID] = useState<string | number>(-1);
   const [showFullMapFixed, setShowFullMapFixed] = useState(false);
+  const [groupedProperties, setGroupedProperties] = useState<Record<string, typeof DEMO_STAYS>>({});
+  const [typeOrder, setTypeOrder] = useState<string[]>(['Villa', 'Appartement', 'Maison', 'Terrain', 'Local commercial']);
 
   // Filtrer les propriétés selon les paramètres URL
   useEffect(() => {
@@ -60,8 +62,23 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
       const bType = b.listingCategory?.name || '';
       return aType.localeCompare(bType);
     });
+
+    // Regrouper les propriétés par type
+    const groupedProperties = sortedFiltered.reduce((groups, property) => {
+      const type = property.listingCategory?.name || 'Autre';
+      if (!groups[type]) {
+        groups[type] = [];
+      }
+      groups[type].push(property);
+      return groups;
+    }, {} as Record<string, typeof sortedFiltered>);
+
+    // Ordre des types pour l'affichage
+    const typeOrder = ['Villa', 'Appartement', 'Maison', 'Terrain', 'Local commercial'];
     
     setFilteredProperties(sortedFiltered);
+    setGroupedProperties(groupedProperties);
+    setTypeOrder(typeOrder);
   }, [searchParams]);
 
   return (
@@ -83,6 +100,39 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
                 <PropertyCard2 data={item} />
               </div>
             ))}
+          </div>
+          
+          {/* Grid des propriétés groupées par type */}
+          <div className="space-y-12 mt-12">
+            {typeOrder.map((type) => {
+              const properties = groupedProperties[type];
+              if (!properties || properties.length === 0) return null;
+              
+              return (
+                <div key={type} className="space-y-6">
+                  {/* En-tête de section */}
+                  <div className="flex items-center space-x-3 border-b border-gray-200 dark:border-gray-700 pb-3">
+                    <div className="w-2 h-8 bg-primary-500 rounded-full"></div>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {type} ({properties.length})
+                    </h2>
+                  </div>
+                  
+                  {/* Grid des propriétés de ce type */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 2xl:gap-x-6 gap-y-8">
+                    {properties.map((property) => (
+                      <div
+                        key={property.id}
+                        onMouseEnter={() => setCurrentHoverID((_) => property.id)}
+                        onMouseLeave={() => setCurrentHoverID((_) => -1)}
+                      >
+                        <PropertyCard2 data={property} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
           
           {/* Message si aucun résultat */}

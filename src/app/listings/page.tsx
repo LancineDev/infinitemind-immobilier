@@ -78,6 +78,19 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
     return aType.localeCompare(bType);
   });
 
+  // Regrouper les propriétés par type
+  const groupedProperties = sortedProperties.reduce((groups, property) => {
+    const type = property.listingCategory?.name || 'Autre';
+    if (!groups[type]) {
+      groups[type] = [];
+    }
+    groups[type].push(property);
+    return groups;
+  }, {} as Record<string, typeof sortedProperties>);
+
+  // Ordre des types pour l'affichage
+  const typeOrder = ['Villa', 'Appartement', 'Maison', 'Terrain', 'Local commercial'];
+
   // Villes ivoiriennes et communes d'Abidjan
   const ivorianCities = [
     // Communes d'Abidjan
@@ -217,11 +230,53 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
           </p>
         </div>
 
-        {/* Grid des propriétés */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-          {sortedProperties.map((property) => (
-            <PropertyCardH key={property.id} data={property} />
-          ))}
+        {/* Grid des propriétés groupées par type */}
+        <div className="space-y-12 mb-8">
+          {typeOrder.map((type) => {
+            const properties = groupedProperties[type];
+            if (!properties || properties.length === 0) return null;
+            
+            return (
+              <div key={type} className="space-y-6">
+                {/* En-tête de section */}
+                <div className="flex items-center space-x-3 border-b border-gray-200 dark:border-gray-700 pb-3">
+                  <div className="w-2 h-8 bg-primary-500 rounded-full"></div>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    {type} ({properties.length})
+                  </h2>
+                </div>
+                
+                {/* Grid des propriétés de ce type */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {properties.map((property) => (
+                    <PropertyCardH key={property.id} data={property} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+          
+          {/* Types non répertoriés */}
+          {Object.keys(groupedProperties)
+            .filter(type => !typeOrder.includes(type))
+            .map((type) => {
+              const properties = groupedProperties[type];
+              return (
+                <div key={type} className="space-y-6">
+                  <div className="flex items-center space-x-3 border-b border-gray-200 dark:border-gray-700 pb-3">
+                    <div className="w-2 h-8 bg-gray-400 rounded-full"></div>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      {type} ({properties.length})
+                    </h2>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {properties.map((property) => (
+                      <PropertyCardH key={property.id} data={property} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
         </div>
 
         {/* Message si aucun résultat */}
