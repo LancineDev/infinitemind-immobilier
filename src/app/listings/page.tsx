@@ -42,18 +42,10 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
       property.address.toLowerCase().includes(selectedCity.toLowerCase()) ||
       selectedCity.toLowerCase().includes(property.address.toLowerCase());
     
-    // Filtrage par type de propriété via propertyType et listingCategory
+    // Filtrage par type de propriété - utilisation de listingCategory.name qui est plus précis
     const matchesType = !selectedType || 
-      (selectedType === "Villa" && property.propertyType === "villa") ||
-      (selectedType === "Appartement" && property.propertyType === "apartment") ||
-      (selectedType === "Maison" && property.propertyType === "house") ||
-      (selectedType === "Terrain" && property.propertyType === "land") ||
-      (selectedType === "Local commercial" && property.propertyType === "commercial") ||
-      (selectedType === "Villa" && property.listingCategory?.name === "Villa") ||
-      (selectedType === "Appartement" && property.listingCategory?.name === "Appartement") ||
-      (selectedType === "Maison" && property.listingCategory?.name === "Maison") ||
-      (selectedType === "Terrain" && property.listingCategory?.name === "Terrain") ||
-      (selectedType === "Local commercial" && property.listingCategory?.name === "Local commercial");
+      property.listingCategory?.name.toLowerCase().includes(selectedType.toLowerCase()) ||
+      selectedType.toLowerCase().includes(property.listingCategory?.name.toLowerCase() || "");
     
     const matchesPrice = !priceRange || true; // Simplifié pour l'instant
     
@@ -70,7 +62,11 @@ const ListingsPage: FC<ListingsPageProps> = ({}) => {
     "Daloa", "Gagnoa", "Man", "Sassandra", "Divo", "Grand-Bassam"
   ];
 
-  // Types de propriétés disponibles dans les données
+  // Types de propriétés disponibles dans les données (basé sur listingCategory.name)
+  // Debug: Afficher les types réels disponibles
+  const availableTypes = Array.from(new Set(DEMO_PROPERTY_LISTINGS.map(p => p.listingCategory?.name).filter(Boolean)));
+  console.log("Types disponibles:", availableTypes);
+  
   const propertyTypes = [
     "Villa", "Appartement", "Maison", "Terrain", "Local commercial"
   ];
