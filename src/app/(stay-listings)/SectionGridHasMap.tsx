@@ -10,13 +10,41 @@ import Pagination from "@/shared/Pagination";
 import TabFilters from "./TabFilters";
 import Heading2 from "@/shared/Heading2";
 import PropertyCard2 from "@/components/PropertyCard2";
+import { useSearchParams } from "next/navigation";
 
 const DEMO_STAYS = DEMO_PROPERTY_LISTINGS.filter((_, i) => i < 12);
 export interface SectionGridHasMapProps {}
 
 const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
+  const searchParams = useSearchParams();
+  const [filteredProperties, setFilteredProperties] = useState(DEMO_STAYS);
   const [currentHoverID, setCurrentHoverID] = useState<string | number>(-1);
   const [showFullMapFixed, setShowFullMapFixed] = useState(false);
+
+  // Filtrer les propriétés selon les paramètres URL
+  useEffect(() => {
+    const type = searchParams.get('type');
+    const city = searchParams.get('city');
+    
+    let filtered = DEMO_STAYS;
+    
+    // Filtrer par type
+    if (type) {
+      filtered = filtered.filter(property => 
+        property.listingCategory?.name.toLowerCase() === type.toLowerCase()
+      );
+    }
+    
+    // Filtrer par ville
+    if (city) {
+      filtered = filtered.filter(property => 
+        property.address.toLowerCase().includes(city.toLowerCase()) ||
+        city.toLowerCase().includes(property.address.toLowerCase())
+      );
+    }
+    
+    setFilteredProperties(filtered);
+  }, [searchParams]);
 
   return (
     <div>
@@ -28,7 +56,7 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
             <TabFilters />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 2xl:gap-x-6 gap-y-8">
-            {DEMO_STAYS.map((item) => (
+            {filteredProperties.map((item) => (
               <div
                 key={item.id}
                 onMouseEnter={() => setCurrentHoverID((_) => item.id)}
@@ -38,6 +66,15 @@ const SectionGridHasMap: FC<SectionGridHasMapProps> = () => {
               </div>
             ))}
           </div>
+          
+          {/* Message si aucun résultat */}
+          {filteredProperties.length === 0 && (
+            <div className="text-center py-12">
+              <div className="text-gray-500 dark:text-gray-400 mb-4">
+                Aucune propriété trouvée pour vos critères
+              </div>
+            </div>
+          )}
           <div className="flex mt-16 justify-center items-center">
             <Pagination />
           </div>
