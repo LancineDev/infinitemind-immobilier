@@ -46,9 +46,11 @@ export default function ManageListings() {
   }, []);
 
   const loadProperties = () => {
-    // Charger les propriétés depuis localStorage ou API
+    // Forcer le rechargement depuis les données sources pour inclure toutes les propriétés
+    localStorage.removeItem('properties'); // Forcer le rechargement complet
+    
     const savedProperties = localStorage.getItem('properties');
-    if (savedProperties) {
+    if (savedProperties) { // Charger depuis localStorage si disponible
       setProperties(JSON.parse(savedProperties));
     } else {
       // Transformer les DEMO_PROPERTY_LISTINGS en format de gestion
